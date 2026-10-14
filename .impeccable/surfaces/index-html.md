@@ -12,6 +12,7 @@ Audience: Brazilian adults, mostly arriving from Instagram on a phone, open to e
 Job / action: book a session — pick an intention/session and open WhatsApp with a pre-filled message.
 Proof on hand: none (no photo, testimonials, prices). Placeholders stay visibly marked; no invented testimonials or credentials.
 Constraints: complementary-therapy disclaimer visible; no cure/diagnosis language; no AI portrait of Anelise.
+Build: comp-led was recorded, but the comp files cannot be copied into this container (network policy), so the build ran code-led with comp 3 (URL in .impeccable/mocks/comps.json, approval delegated by the user) as critique reference.
 Choice: direction "Santinho de Luz" — user delegated the pick ("da teu melhor"); degraded roll (no challengers, roll service unreachable).
 
 ## Direction contract
@@ -22,7 +23,7 @@ OWN-WORLD: Manto ultramarine owns the page ground; resplendor gold carries rays,
 
 STORY: The visitor recognises a santinho, learns who Anelise is and what a session proposes, reads the back of the card like a prayer (manifesto), browses the sessions as a small set of cards by intention, sees how it works and the honest disclaimer, and books on WhatsApp.
 
-FIRST VIEWPORT: Ultramarine field. A large portrait santinho sits slightly right of centre (about 40% of the width on desktop, full width on mobile): lace edge, gold rays behind the Dragão de Luz plate, her name and title in the card's lower cartouche. Left of it: "Luz que se move em você." and a working booking strip (sessão select + "Agendar pelo WhatsApp" gold pill). Quiet wordmark nav on top.
+FIRST VIEWPORT: Ultramarine field. A large portrait santinho sits slightly right of centre (about 40% of the width on desktop, full width on mobile): lace edge, gold rays behind the Dragão de Luz plate, the figure's name ("Dragão de Luz") in the card's lower cartouche, as santinhos name their figure; her name and title sit in the nav wordmark and on the card's back. Left of it: "Luz que se move em você." and a working booking strip (sessão select + "Agendar pelo WhatsApp" gold pill). Quiet wordmark nav on top.
 
 FORM: assigned candidate 3 of 7 (Santinho de Luz) after one factual re-roll (candidate 7, apothecary, implied prescribed remedies against PRODUCT.md's no-cure constraint). seed: none (unavailable)
 Signature interaction: the santinho turns over (rotateY) as you scroll past the hero to show its back, the manifesto set as a prayer; the resplendor rays breathe on a 5s cycle. Reduced motion shows front and back side by side, still.

@@ -12,6 +12,8 @@ done <<'LISTA'
 08167ffa-38ca-4469-a65b-636e795d3a43 dragao-640
 b90d1f41-c351-42a9-a728-eb88bd5d7f88 guirlanda-1600
 176cfbd4-e73b-4219-a294-f5c6f6070377 guirlanda-900
+fae1d395-cf1d-428b-a477-0533bff03635 mesa
+b34ef7dc-6fe6-4623-b896-07d235ca40b0 sol
 LISTA
 rm -f index.html.bak
 sed -i.bak '/rel="preconnect" href="https:\/\/d2ol7oe51mr4n9/d' index.html && rm -f index.html.bak

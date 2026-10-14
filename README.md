@@ -36,10 +36,15 @@ As artes (o Dragão de Luz do santinho e a guirlanda de rosas) foram geradas no 
 ./baixar-imagens.sh
 ```
 
-Ele baixa as quatro imagens para `assets/img/` e troca os links do `index.html`. Depois disso, ajuste a tag `og:image` para o endereço completo do site (ex.: `https://seudominio.com.br/assets/img/dragao-1100.webp`), porque o WhatsApp e o Instagram só leem link completo.
+Ele baixa as seis imagens para `assets/img/` e troca os links do `index.html`. Rode antes de publicar, num computador com internet: assim o site não depende do CDN do Higgsfield.
+
+## Link do site e domínio
+
+O site já aponta para `https://vicenzocamillo-a11y.github.io/site-m/` (link canônico, `og:url`, `og:image` e dados estruturados). Se for usar um domínio próprio, troque esse endereço no `<head>` do `index.html`. A imagem de compartilhamento do WhatsApp e do Instagram é `assets/og.jpg` (1200×630).
 
 Prompts usados:
 - **Dragão de Luz (frente do santinho):** ilustração de santinho em cromolitografia, sem texto: um Dragão de Luz dourado e sereno subindo em S diante de um resplendor de raios gravados, fundo rosa-pêssego com grão de papel, sóis dourados nos cantos de cima e rosas com folhas esmeralda nos cantos de baixo. Modelo Nano Banana 2.1.
+- **Cartões Mesa Quântica e Harmonização:** dois santinhos lado a lado no mesmo estilo, uma mesa radiônica circular gravada com pêndulo e um sol em resplendor, rosas nos cantos, recortados em duas imagens. Modelo Nano Banana 2.1.
 - **Guirlanda:** faixa ornamental de rosas, folhas esmeralda, arabescos dourados e dois sóis, sobre azul-ultramar liso (fundo removido depois). Modelo Nano Banana 2.1.
 
 ## Publicar
