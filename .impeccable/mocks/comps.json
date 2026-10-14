@@ -1,0 +1,8 @@
+{
+  "note": "Comp files could not be copied into this repo (generation CDN blocked by the container's network policy). URLs and prompts kept as provenance.",
+  "comps": [
+    {"id": "comp-1", "model": "nano_banana_2_1", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JWCbqGOdJK9lfvh2f44thjxYM1/hf_20261014_113949_e6e1489c-277b-45aa-a4b7-06278a330e31.png", "concept": "card right of centre, headline left, booking strip"},
+    {"id": "comp-2", "model": "nano_banana_2_1", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JWCbqGOdJK9lfvh2f44thjxYM1/hf_20261014_114044_eec07198-9dd2-4bfa-82bb-c8028b672090.png", "concept": "viewport is the santinho, banner name, floral border"},
+    {"id": "comp-3", "model": "nano_banana_2_1", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JWCbqGOdJK9lfvh2f44thjxYM1/hf_20261014_114635_8d1b7338-3e72-49ad-b629-460ce749f088.png", "concept": "card turning showing front and back, headline left, three session santinhos below", "approved": true, "approvedBy": "delegated: user said 'da teu melhor'"}
+  ]
+}
