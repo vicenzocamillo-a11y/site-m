@@ -280,11 +280,11 @@ h2 {
 
 /* entrada da abertura: as linhas do título materializam, uma depois da outra */
 @media (prefers-reduced-motion: no-preference) {
-  .cena h1 .linha, .lead, .agendar, .agendar-nota { animation: materializar 900ms var(--ease-out) both; }
-  .cena h1 .linha:nth-child(2) { animation-delay: 80ms; }
-  .lead { animation-delay: 160ms; }
-  .agendar { animation-delay: 240ms; }
-  .agendar-nota { animation-delay: 300ms; }
+  .cena h1 .linha, .lead, .agendar, .agendar-nota { animation: materializar 600ms var(--ease-out) both; }
+  .cena h1 .linha:nth-child(2) { animation-delay: 50ms; }
+  .lead { animation-delay: 100ms; }
+  .agendar { animation-delay: 150ms; }
+  .agendar-nota { animation-delay: 190ms; }
   .cartao-controles { animation: acender 900ms 500ms var(--ease-out) both; }
   .raios { animation: acender 1600ms var(--ease-out) both; }
 }
