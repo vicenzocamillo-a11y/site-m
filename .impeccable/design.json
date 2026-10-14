@@ -1,465 +1,720 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-14T00:00:00Z",
+  "generatedAt": "2026-10-14T17:00:00Z",
   "title": "Design System: Anelise Werle Camillo, Terapeuta Quântica",
   "extensions": {
     "colorMeta": {
-      "manto": {
+      "esm-950": {
         "role": "primary",
-        "displayName": "Manto Ultramarine",
-        "canonical": "#0E2269",
+        "displayName": "Night Emerald",
+        "canonical": "#031A13",
         "tonalRamp": [
-          "#03003F",
-          "#081960",
-          "#203981",
-          "#3C59A4",
-          "#5A79C8",
-          "#799BED",
-          "#9EC2FF",
-          "#C9EDFF"
+          "#001009",
+          "#112922",
+          "#2D463D",
+          "#4B645B",
+          "#6A847A",
+          "#8AA69B",
+          "#AFCCC1",
+          "#D9F6EB"
         ]
       },
-      "manto-fundo": {
+      "esm-900": {
         "role": "primary",
-        "displayName": "Manto Fundo",
-        "canonical": "#0A1950",
+        "displayName": "Deep Emerald",
+        "canonical": "#062A20",
         "tonalRamp": [
-          "#03003F",
-          "#081960",
-          "#203981",
-          "#3C59A4",
-          "#5A79C8",
-          "#799BED",
-          "#9EC2FF",
-          "#C9EDFF"
+          "#001108",
+          "#072B21",
+          "#25473C",
+          "#43665A",
+          "#638679",
+          "#83A89A",
+          "#A8CEC0",
+          "#D2F9EA"
         ]
       },
-      "manto-claro": {
+      "esm-800": {
         "role": "primary",
-        "displayName": "Manto Claro",
-        "canonical": "#1A2F86",
+        "displayName": "Lit Emerald",
+        "canonical": "#0A3A2C",
         "tonalRamp": [
-          "#03003F",
-          "#081960",
-          "#203981",
-          "#3C59A4",
-          "#5A79C8",
-          "#799BED",
-          "#9EC2FF",
-          "#C9EDFF"
+          "#001207",
+          "#002C1F",
+          "#1C493B",
+          "#3C6858",
+          "#5B8877",
+          "#7CAA98",
+          "#A1D0BE",
+          "#CBFBE8"
+        ]
+      },
+      "esm-700": {
+        "role": "primary",
+        "displayName": "Engraved Emerald",
+        "canonical": "#0F5040",
+        "tonalRamp": [
+          "#001308",
+          "#002E20",
+          "#074B3B",
+          "#2F6A59",
+          "#508B78",
+          "#71AD99",
+          "#96D3BF",
+          "#C0FEE9"
+        ]
+      },
+      "esm-300": {
+        "role": "primary",
+        "displayName": "Mint Glint",
+        "canonical": "#8CCFB0",
+        "tonalRamp": [
+          "#001403",
+          "#002F19",
+          "#004D34",
+          "#296C51",
+          "#4B8D70",
+          "#6DAF91",
+          "#92D5B6",
+          "#BCFFE0"
         ]
       },
       "ouro": {
         "role": "secondary",
         "displayName": "Resplendor Gold",
-        "canonical": "#D9B25F",
+        "canonical": "#D6B25E",
         "tonalRamp": [
-          "#1F0100",
-          "#3C1B00",
-          "#5A3800",
-          "#7A5700",
-          "#9C771C",
-          "#BF9844",
-          "#E6BE6B",
-          "#FFE995"
+          "#1E0200",
+          "#3B1C00",
+          "#593900",
+          "#795800",
+          "#9A781C",
+          "#BD9944",
+          "#E4BF6B",
+          "#FFEA95"
         ]
       },
       "ouro-claro": {
         "role": "secondary",
         "displayName": "Pale Gold",
-        "canonical": "#F0D58F",
+        "canonical": "#F2DC9B",
         "tonalRamp": [
-          "#1F0100",
-          "#3C1B00",
-          "#5A3800",
-          "#7A5700",
-          "#9C771C",
-          "#BF9844",
-          "#E6BE6B",
-          "#FFE995"
+          "#180600",
+          "#332100",
+          "#503D00",
+          "#6F5B19",
+          "#907B3D",
+          "#B29D5E",
+          "#D8C383",
+          "#FFEDAC"
         ]
       },
       "ouro-escuro": {
         "role": "secondary",
         "displayName": "Engraver's Gold",
-        "canonical": "#8F6D25",
+        "canonical": "#8C6A22",
         "tonalRamp": [
-          "#1F0100",
-          "#3C1B00",
-          "#5A3800",
-          "#7A5700",
-          "#9C771C",
-          "#BF9844",
-          "#E6BE6B",
-          "#FFE995"
+          "#1D0200",
+          "#3A1C00",
+          "#593900",
+          "#785704",
+          "#9A7731",
+          "#BC9954",
+          "#E3BE79",
+          "#FFE9A3"
         ]
       },
-      "rosa": {
-        "role": "tertiary",
-        "displayName": "Chromolithograph Rose",
-        "canonical": "#E8A0A6",
+      "ouro-texto": {
+        "role": "secondary",
+        "displayName": "Text Gold",
+        "canonical": "#7A5A14",
         "tonalRamp": [
-          "#250002",
-          "#440B17",
-          "#652A32",
-          "#87484F",
-          "#AA676E",
-          "#CE888E",
-          "#F7ADB3",
-          "#FFD7DD"
+          "#1D0300",
+          "#391C00",
+          "#583900",
+          "#775810",
+          "#997737",
+          "#BB9959",
+          "#E2BF7E",
+          "#FFE9A7"
         ]
       },
-      "rosa-tinta": {
-        "role": "tertiary",
-        "displayName": "Rose Ink",
-        "canonical": "#9E3F4C",
+      "ouro-reflexo": {
+        "role": "secondary",
+        "displayName": "Gilt Highlight",
+        "canonical": "#F5DFA2",
         "tonalRamp": [
-          "#250002",
-          "#440B17",
-          "#652A32",
-          "#87484F",
-          "#AA676E",
-          "#CE888E",
-          "#F7ADB3",
-          "#FFD7DD"
+          "#180600",
+          "#332100",
+          "#503D00",
+          "#6F5B1F",
+          "#907B41",
+          "#B29D62",
+          "#D8C387",
+          "#FFEDB0"
         ]
       },
-      "placa-rosada": {
-        "role": "tertiary",
-        "displayName": "Blush Plate",
-        "canonical": "#F1C9C0",
+      "ouro-base": {
+        "role": "secondary",
+        "displayName": "Gilt Base",
+        "canonical": "#C49C45",
         "tonalRamp": [
-          "#250002",
-          "#440B17",
-          "#652A32",
-          "#87484F",
-          "#AA676E",
-          "#CE888E",
-          "#F7ADB3",
-          "#FFD7DD"
+          "#200000",
+          "#3D1A00",
+          "#5B3700",
+          "#7C5600",
+          "#9D7615",
+          "#C09841",
+          "#E7BE68",
+          "#FFE992"
         ]
       },
-      "papel": {
+      "marfim": {
         "role": "neutral",
-        "displayName": "Card Stock",
-        "canonical": "#F6ECDD",
+        "displayName": "Ivory",
+        "canonical": "#F5EEDF",
         "tonalRamp": [
-          "#100A02",
-          "#2A2318",
-          "#463E32",
-          "#655C50",
-          "#857C6E",
-          "#A69D8F",
-          "#CCC3B4",
-          "#F7EDDE"
+          "#0F0A03",
+          "#292318",
+          "#453F33",
+          "#635D50",
+          "#837D6F",
+          "#A49E90",
+          "#CAC3B5",
+          "#F5EEDF"
         ]
       },
-      "papel-sombra": {
+      "marfim-2": {
         "role": "neutral",
-        "displayName": "Papel Sombra",
-        "canonical": "#EADAC2",
+        "displayName": "Shaded Ivory",
+        "canonical": "#EAE0CA",
         "tonalRamp": [
-          "#100A02",
-          "#2A2318",
-          "#463E32",
-          "#655C50",
-          "#857C6E",
-          "#A69D8F",
-          "#CCC3B4",
-          "#F7EDDE"
+          "#110A00",
+          "#2B2312",
+          "#473F2D",
+          "#655D4A",
+          "#857C68",
+          "#A79E89",
+          "#CDC3AE",
+          "#F8EED7"
+        ]
+      },
+      "marfim-passo": {
+        "role": "neutral",
+        "displayName": "Step Paper",
+        "canonical": "#FBF7EE",
+        "tonalRamp": [
+          "#0D0B06",
+          "#27241D",
+          "#433F38",
+          "#615D56",
+          "#807D75",
+          "#A29E96",
+          "#C8C4BB",
+          "#F2EEE5"
+        ]
+      },
+      "texto": {
+        "role": "neutral",
+        "displayName": "Milk",
+        "canonical": "#F3EEE2",
+        "tonalRamp": [
+          "#0E0B04",
+          "#27241B",
+          "#433F36",
+          "#615D53",
+          "#817D72",
+          "#A39E93",
+          "#C9C4B8",
+          "#F3EEE2"
+        ]
+      },
+      "texto-2": {
+        "role": "neutral",
+        "displayName": "Sage Milk",
+        "canonical": "#B7CEC2",
+        "tonalRamp": [
+          "#010F08",
+          "#162920",
+          "#31453B",
+          "#4F6359",
+          "#6E8378",
+          "#8EA599",
+          "#B4CBBF",
+          "#DDF5E9"
         ]
       },
       "tinta": {
         "role": "neutral",
         "displayName": "Ink",
-        "canonical": "#1C2357",
+        "canonical": "#0A3A2C",
         "tonalRamp": [
-          "#050131",
-          "#171D50",
-          "#303A71",
-          "#4D5992",
-          "#6B79B5",
-          "#8B9BD9",
-          "#B0C0FF",
-          "#D9EBFF"
+          "#001207",
+          "#002C1F",
+          "#1C493B",
+          "#3C6858",
+          "#5B8877",
+          "#7CAA98",
+          "#A1D0BE",
+          "#CBFBE8"
         ]
       },
-      "tinta-suave": {
+      "tinta-2": {
         "role": "neutral",
         "displayName": "Soft Ink",
-        "canonical": "#3A3F6B",
+        "canonical": "#2F5A4C",
         "tonalRamp": [
-          "#050131",
-          "#171D50",
-          "#303A71",
-          "#4D5992",
-          "#6B79B5",
-          "#8B9BD9",
-          "#B0C0FF",
-          "#D9EBFF"
+          "#001208",
+          "#002C20",
+          "#1D493C",
+          "#3D6859",
+          "#5C8879",
+          "#7DAA9A",
+          "#A2D0BF",
+          "#CBFBE9"
         ]
       },
-      "leite": {
+      "vidro": {
         "role": "neutral",
-        "displayName": "Milk",
-        "canonical": "#EFE6D6",
-        "tonalRamp": [
-          "#100A02",
-          "#2A2318",
-          "#463E32",
-          "#655C50",
-          "#857C6E",
-          "#A69D8F",
-          "#CCC3B4",
-          "#F7EDDE"
-        ]
+        "displayName": "Material: vidro",
+        "canonical": "rgba(3, 26, 19, 0.55)"
       },
-      "leite-suave": {
+      "vidro-denso": {
         "role": "neutral",
-        "displayName": "Soft Milk",
-        "canonical": "#BFC6E8",
-        "tonalRamp": [
-          "#050131",
-          "#171D50",
-          "#303A71",
-          "#4D5992",
-          "#6B79B5",
-          "#8B9BD9",
-          "#B0C0FF",
-          "#D9EBFF"
-        ]
+        "displayName": "Material: vidro-denso",
+        "canonical": "rgba(3, 26, 19, 0.72)"
+      },
+      "vidro-borda": {
+        "role": "neutral",
+        "displayName": "Material: vidro-borda",
+        "canonical": "rgba(3, 26, 19, 0.45)"
+      },
+      "folha-menu": {
+        "role": "neutral",
+        "displayName": "Material: folha-menu",
+        "canonical": "rgba(3, 26, 19, 0.96)"
+      },
+      "raio": {
+        "role": "neutral",
+        "displayName": "Material: raio",
+        "canonical": "rgba(242, 220, 155, 0.3)"
+      },
+      "raio-medalhao": {
+        "role": "neutral",
+        "displayName": "Material: raio-medalhao",
+        "canonical": "rgba(214, 178, 94, 0.35)"
+      },
+      "filete": {
+        "role": "neutral",
+        "displayName": "Material: filete",
+        "canonical": "rgba(214, 178, 94, 0.3)"
+      },
+      "filete-rodape": {
+        "role": "neutral",
+        "displayName": "Material: filete-rodape",
+        "canonical": "rgba(214, 178, 94, 0.2)"
+      },
+      "filete-campo": {
+        "role": "neutral",
+        "displayName": "Material: filete-campo",
+        "canonical": "rgba(214, 178, 94, 0.5)"
+      },
+      "filete-papel": {
+        "role": "neutral",
+        "displayName": "Material: filete-papel",
+        "canonical": "rgba(140, 106, 34, 0.7)"
+      },
+      "filete-papel-2": {
+        "role": "neutral",
+        "displayName": "Material: filete-papel-2",
+        "canonical": "rgba(140, 106, 34, 0.4)"
+      },
+      "campo": {
+        "role": "neutral",
+        "displayName": "Material: campo",
+        "canonical": "rgba(255, 255, 255, 0.06)"
+      },
+      "campo-hover": {
+        "role": "neutral",
+        "displayName": "Material: campo-hover",
+        "canonical": "rgba(255, 255, 255, 0.09)"
+      },
+      "brilho": {
+        "role": "neutral",
+        "displayName": "Material: brilho",
+        "canonical": "rgba(255, 255, 255, 0.5)"
+      },
+      "sombra": {
+        "role": "neutral",
+        "displayName": "Material: sombra",
+        "canonical": "rgba(0, 0, 0, 0.7)"
+      },
+      "sombra-funda": {
+        "role": "neutral",
+        "displayName": "Material: sombra-funda",
+        "canonical": "rgba(0, 0, 0, 0.8)"
+      },
+      "sombra-renda": {
+        "role": "neutral",
+        "displayName": "Material: sombra-renda",
+        "canonical": "rgba(0, 8, 5, 0.55)"
+      },
+      "poco-icone": {
+        "role": "neutral",
+        "displayName": "Material: poco-icone",
+        "canonical": "rgba(10, 58, 44, 0.12)"
+      },
+      "borda-passo": {
+        "role": "neutral",
+        "displayName": "Material: borda-passo",
+        "canonical": "rgba(10, 58, 44, 0.1)"
+      },
+      "marca-ph": {
+        "role": "neutral",
+        "displayName": "Material: marca-ph",
+        "canonical": "rgba(242, 220, 155, 0.1)"
+      },
+      "marca-ph-papel": {
+        "role": "neutral",
+        "displayName": "Material: marca-ph-papel",
+        "canonical": "rgba(122, 90, 20, 0.08)"
+      },
+      "mascara": {
+        "role": "neutral",
+        "displayName": "Mask Opaque",
+        "canonical": "#000000",
+        "tonalRamp": []
+      },
+      "mascara-meia": {
+        "role": "neutral",
+        "displayName": "Material: mascara-meia",
+        "canonical": "rgba(0, 0, 0, 0.45)"
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Hero line only, uppercase, ouro-claro."
+        "purpose": "Hero title only, ouro-claro, optical sizing auto."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Every section h2, uppercase."
+        "purpose": "Every section h2."
+      },
+      "headline-contato": {
+        "displayName": "Headline Contato",
+        "purpose": "The contact heading."
+      },
+      "frase": {
+        "displayName": "Frase",
+        "purpose": "The Contabilidade Cósmica manifesto, lit word by word."
+      },
+      "menu-folha": {
+        "displayName": "Menu Sheet",
+        "purpose": "Links in the mobile clip-path menu."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Roman step numerals."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Mixed-case names on card stock (cards, steps)."
+        "purpose": "Session card names."
+      },
+      "title-passo": {
+        "displayName": "Step Title",
+        "purpose": "Step names on the ivory page."
+      },
+      "elemento": {
+        "displayName": "Elemento",
+        "purpose": "The four element names under Dragões de Luz."
+      },
+      "oracao": {
+        "displayName": "Oração",
+        "purpose": "The prayer on the santinho back."
+      },
+      "cartela": {
+        "displayName": "Cartela",
+        "purpose": "The cartouche name plate on the santinho front."
       },
       "wordmark": {
         "displayName": "Wordmark",
-        "purpose": "Header and footer name, uppercase."
+        "purpose": "Header name."
+      },
+      "wordmark-rodape": {
+        "displayName": "Footer Wordmark",
+        "purpose": "Footer name."
+      },
+      "assinatura": {
+        "displayName": "Assinatura",
+        "purpose": "Uppercase prayer signature."
       },
       "lead": {
         "displayName": "Lead",
-        "purpose": "Hero paragraph and Dragões text."
+        "purpose": "Hero paragraph."
+      },
+      "intro": {
+        "displayName": "Intro",
+        "purpose": "Section intros and Dragões text."
+      },
+      "body-large": {
+        "displayName": "Body Large",
+        "purpose": "Contact paragraph and large button."
+      },
+      "question": {
+        "displayName": "Question",
+        "purpose": "FAQ summaries."
       },
       "body": {
         "displayName": "Body",
         "purpose": "All running text."
       },
-      "prayer": {
-        "displayName": "Prayer",
-        "purpose": "Italic manifesto on the santinho's back."
-      },
       "label": {
         "displayName": "Label",
-        "purpose": "Button and card-link text."
+        "purpose": "Gold button label."
+      },
+      "card-body": {
+        "displayName": "Card Body",
+        "purpose": "Session card copy and links."
       },
       "small": {
         "displayName": "Small",
-        "purpose": "Notes, disclaimer, footer."
+        "purpose": "Flip control, support line, Instagram line."
+      },
+      "formato": {
+        "displayName": "Formato",
+        "purpose": "Session format line."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Header links, header pill, short notice."
+      },
+      "note": {
+        "displayName": "Note",
+        "purpose": "Booking note, drag hint, footer."
+      },
+      "micro": {
+        "displayName": "Micro",
+        "purpose": "Wordmark subtitle."
       }
     },
     "shadows": [
       {
         "name": "lace-lift",
-        "value": "drop-shadow(0 26px 30px rgba(2,6,30,.55))",
-        "purpose": "filter on every lace-framed card; 0 30px 40px on the steps sheet."
+        "value": "drop-shadow(0 30px 40px rgba(0, 8, 5, .55))",
+        "purpose": "filter on lace-edged faces and cards so scallops cast."
       },
       {
-        "name": "pill-lift",
-        "value": "0 14px 28px -14px rgba(2,6,30,.8), inset 0 1px 0 rgba(255,255,255,.55), inset 0 -1px 0 rgba(120,85,20,.35)",
-        "purpose": "Gold pill and floating WhatsApp button."
+        "name": "gilt-lift",
+        "value": "0 12px 26px -14px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .5)",
+        "purpose": "Gold button."
+      },
+      {
+        "name": "gilt-lift-float",
+        "value": "0 14px 30px -12px rgba(0, 0, 0, .8), inset 0 1px 0 rgba(255, 255, 255, .5)",
+        "purpose": "Floating WhatsApp button."
       },
       {
         "name": "medallion",
-        "value": "0 0 0 6px #0E2269, 0 0 0 7px rgba(217,178,95,.5), 0 30px 50px -20px rgba(2,6,30,.8)",
-        "purpose": "Portrait oval: double ring plus ambient lift."
+        "value": "0 0 0 6px var(--esm-950), 0 0 0 7px rgba(214, 178, 94, .5), 0 30px 60px -24px rgba(0, 0, 0, .8)",
+        "purpose": "Portrait oval ring and fall."
       },
       {
         "name": "double-filete",
-        "value": "inset 0 0 0 3px #F6ECDD, inset 0 0 0 4px rgba(143,109,37,.4)",
-        "purpose": "Second printed hairline inside card stock."
+        "value": "inset 0 0 0 3px var(--marfim), inset 0 0 0 4px rgba(140, 106, 34, .4)",
+        "purpose": "Second hairline inside card stock."
       },
       {
-        "name": "cartouche",
-        "value": "0 6px 14px -8px rgba(60,30,10,.5)",
-        "purpose": "Name plate on the santinho front."
+        "name": "glass",
+        "value": "backdrop-filter: blur(20px) saturate(180%)",
+        "purpose": "Header material over vidro / vidro-denso; removed under reduced transparency."
       }
     ],
     "motion": [
       {
-        "name": "suave",
-        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
-        "purpose": "The one easing curve for every transition."
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Everything that arrives or responds."
       },
       {
-        "name": "hover-quick",
-        "value": ".3s",
-        "purpose": "Colour and border changes."
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Mobile menu closing."
       },
       {
-        "name": "hover-slow",
-        "value": ".5s",
-        "purpose": "Underline draw, pill lift, menu fade."
+        "name": "press",
+        "value": "scale(.97) 160ms ease-out",
+        "purpose": "Active state of every pressable."
       },
       {
-        "name": "card-straighten",
-        "value": ".8s",
-        "purpose": "Fanned session card straightens on hover/focus."
+        "name": "materializar",
+        "value": "900ms ease-out, 80ms stagger, from blur(8px) and 0.5em down",
+        "purpose": "Hero entry."
       },
       {
-        "name": "santinho-flip",
-        "value": "1.2s; scroll-driven rotateY(-14deg + var(--giro) * 194deg)",
-        "purpose": "Signature turn-over of the hero card."
+        "name": "scene",
+        "value": "240svh pinned; text out 0-0.28, card rise 0-0.34, turn 0.4-0.78 (-12deg to 180deg), ease-out cubic",
+        "purpose": "Scroll-scrubbed hero in site.js."
       },
       {
-        "name": "surgir",
-        "value": "1.4s .15s",
-        "purpose": "Hero scene rises 3rem and fades in."
+        "name": "spring-flip",
+        "value": "response 0.45s, damping 1",
+        "purpose": "Button / tap flip, no overshoot."
       },
       {
-        "name": "respirar",
-        "value": "2.5s ease-in-out, 2 iterations alternate",
-        "purpose": "Ray burst breathes (opacity .7-1, scale .97-1.03) then rests."
+        "name": "spring-release",
+        "value": "response 0.4s, damping 0.8, momentum projection d=0.995",
+        "purpose": "Drag release, inherits finger velocity."
+      },
+      {
+        "name": "menu-sheet",
+        "value": "clip-path circle(), open 0.5s ease-out, close 0.3s ease-in-out, 40ms link stagger",
+        "purpose": "Mobile menu."
+      },
+      {
+        "name": "details",
+        "value": "block-size 0.3s ease-out via ::details-content",
+        "purpose": "FAQ answers."
+      },
+      {
+        "name": "scroll-driven",
+        "value": "@supports (animation-timeline: view())",
+        "purpose": "Rays rotate 40deg, garland unrolls, phrase word by word, steps rise, headings settle from 6px blur, desktop card fan, mobile rail focus."
       }
     ],
     "breakpoints": [
       {
-        "name": "compact",
+        "name": "steps-2col",
+        "value": "960px"
+      },
+      {
+        "name": "mobile",
         "value": "860px"
       },
       {
-        "name": "narrow",
-        "value": "480px"
+        "name": "small",
+        "value": "560px"
       }
     ]
   },
   "components": [
     {
-      "name": "Gold Pill",
+      "name": "Gold Button",
       "kind": "button",
-      "refersTo": "button-gold",
-      "description": "The single primary action: book on WhatsApp.",
-      "html": "<div class=\"ds-manto\"><button class=\"ds-btn-ouro\"><span>Agendar pelo WhatsApp</span><span class=\"ds-btn-icone\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z\"/></svg></span></button></div>",
-      "css": ":host{--manto:#0E2269;--manto-fundo:#0A1950;--manto-claro:#1A2F86;--ouro:#D9B25F;--ouro-claro:#F0D58F;--ouro-escuro:#8F6D25;--papel:#F6ECDD;--papel-sombra:#EADAC2;--rosa:#E8A0A6;--rosa-tinta:#9E3F4C;--tinta:#1C2357;--tinta-suave:#3A3F6B;--leite:#EFE6D6;--leite-suave:#BFC6E8;--serif-display:\"Bodoni Moda\",\"Didot\",\"Bodoni 72\",Georgia,serif;--serif-texto:\"Alegreya\",\"Iowan Old Style\",Georgia,serif;--suave:cubic-bezier(0.22,1,0.36,1);} .ds-manto{background:var(--manto);padding:2rem;} .ds-btn-ouro{display:inline-flex;align-items:center;gap:.9rem;min-height:3.1rem;padding:.45rem .45rem .45rem 1.4rem;border:0;border-radius:999px;background:linear-gradient(180deg,#F6DFA0 0%,var(--ouro) 55%,#C79D47 100%);color:var(--tinta);font-family:var(--serif-texto);font-weight:650;font-size:1.05rem;letter-spacing:.01em;cursor:pointer;box-shadow:0 14px 28px -14px rgba(2,6,30,.8),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(120,85,20,.35);transition:transform .5s var(--suave),box-shadow .5s var(--suave),filter .3s;} .ds-btn-ouro:hover{filter:brightness(1.05);box-shadow:0 18px 32px -14px rgba(2,6,30,.9),inset 0 1px 0 rgba(255,255,255,.6);} .ds-btn-ouro:active{transform:scale(.98);} .ds-btn-ouro:focus-visible{outline:2px solid var(--ouro-claro);outline-offset:3px;} .ds-btn-icone{display:grid;place-items:center;width:2.3rem;height:2.3rem;border-radius:50%;background:rgba(28,35,87,.12);transition:transform .5s var(--suave);} .ds-btn-ouro:hover .ds-btn-icone{transform:translateX(2px) scale(1.06);}"
+      "refersTo": "botao-ouro",
+      "description": "The single primary action: gilt pill with WhatsApp icon well.",
+      "html": "<button class=\"ds-botao-ouro\"><span>Agendar pelo WhatsApp</span><span class=\"ds-botao-icone\"><svg viewBox=\"0 0 20 20\" width=\"18\" height=\"18\"><path d=\"M10 0c.6 5.6 4.4 9.4 10 10-5.6.6-9.4 4.4-10 10-.6-5.6-4.4-9.4-10-10C5.6 9.4 9.4 5.6 10 0Z\" fill=\"currentColor\"/></svg></span></button>",
+      "css": ".ds-botao-ouro { display: inline-flex; align-items: center; gap: .8rem; height: 3.1rem; padding: 0 .4rem 0 1.4rem; border: 0; border-radius: 999px; background: linear-gradient(180deg, #F5DFA2 0%, var(--ouro) 60%, #C49C45 100%); color: var(--tinta, #0A3A2C); font: 650 1rem/1 system-ui, -apple-system, sans-serif; letter-spacing: -0.01em; cursor: pointer; box-shadow: 0 12px 26px -14px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.5); transition: transform 160ms cubic-bezier(0.23,1,0.32,1), filter .2s ease; } .ds-botao-ouro:hover { filter: brightness(1.05); } .ds-botao-ouro:active { transform: scale(.97); } .ds-botao-ouro:focus-visible { outline: 2px solid #F2DC9B; outline-offset: 3px; } .ds-botao-icone { display: grid; place-items: center; width: 2.3rem; height: 2.3rem; border-radius: 50%; background: rgba(10,58,44,.12); transition: transform 200ms cubic-bezier(0.23,1,0.32,1); } .ds-botao-ouro:hover .ds-botao-icone { transform: translateX(2px); }"
+    },
+    {
+      "name": "Header Pill",
+      "kind": "button",
+      "refersTo": "pilula",
+      "description": "Compact booking action in the glass header.",
+      "html": "<a class=\"ds-pilula\" href=\"#\">Agendar</a>",
+      "css": ".ds-pilula { display: inline-flex; align-items: center; height: 2rem; padding: 0 1rem; border-radius: 999px; text-decoration: none; background: #D6B25E; color: #0A3A2C; font: 600 .875rem system-ui, -apple-system, sans-serif; transition: transform 160ms cubic-bezier(0.23,1,0.32,1), filter .2s ease; } .ds-pilula:hover { filter: brightness(1.06); } .ds-pilula:active { transform: scale(.97); } .ds-pilula:focus-visible { outline: 2px solid #F2DC9B; outline-offset: 3px; }"
     },
     {
       "name": "Session Select",
       "kind": "input",
-      "refersTo": "select-session",
-      "description": "Transparent gold-hairline select in the booking strip.",
-      "html": "<div class=\"ds-manto\"><div class=\"ds-select\"><select><option>Ainda não sei</option><option>Mesa Quântica</option></select></div></div>",
-      "css": ":host{--manto:#0E2269;--manto-fundo:#0A1950;--manto-claro:#1A2F86;--ouro:#D9B25F;--ouro-claro:#F0D58F;--ouro-escuro:#8F6D25;--papel:#F6ECDD;--papel-sombra:#EADAC2;--rosa:#E8A0A6;--rosa-tinta:#9E3F4C;--tinta:#1C2357;--tinta-suave:#3A3F6B;--leite:#EFE6D6;--leite-suave:#BFC6E8;--serif-display:\"Bodoni Moda\",\"Didot\",\"Bodoni 72\",Georgia,serif;--serif-texto:\"Alegreya\",\"Iowan Old Style\",Georgia,serif;--suave:cubic-bezier(0.22,1,0.36,1);} .ds-manto{background:var(--manto);padding:2rem;} .ds-select{position:relative;max-width:20rem;} .ds-select::after{content:\"\";position:absolute;right:1rem;top:50%;width:.5rem;height:.5rem;border-right:1.5px solid var(--ouro);border-bottom:1.5px solid var(--ouro);transform:translateY(-70%) rotate(45deg);pointer-events:none;} .ds-select select{width:100%;min-height:3.1rem;appearance:none;background:transparent;color:var(--leite);border:1px solid rgba(217,178,95,.6);border-radius:2px;padding:.7rem 2.4rem .7rem .9rem;font-family:var(--serif-texto);font-size:1.05rem;cursor:pointer;transition:border-color .3s;} .ds-select select:hover{border-color:var(--ouro-claro);} .ds-select select:focus-visible{outline:2px solid var(--ouro-claro);outline-offset:3px;}"
+      "refersTo": "campo-select",
+      "description": "Translucent pill select with gold chevron.",
+      "html": "<div class=\"ds-campo\"><select><option>Mesa Quântica</option><option>Dragões de Luz</option></select></div>",
+      "css": ".ds-campo { position: relative; display: inline-block; background: #062A20; padding: 1rem; } .ds-campo::after { content: \"\"; position: absolute; right: 2.1rem; top: 50%; width: .45rem; height: .45rem; border-right: 1.5px solid #D6B25E; border-bottom: 1.5px solid #D6B25E; transform: translateY(-70%) rotate(45deg); pointer-events: none; } .ds-campo select { appearance: none; height: 3.1rem; min-width: 15rem; padding: 0 2.6rem 0 1.25rem; border-radius: 999px; border: 1px solid rgba(214,178,94,.5); background: rgba(255,255,255,.06); color: #F3EEE2; font: 1rem system-ui, -apple-system, sans-serif; transition: border-color .2s ease, background-color .2s ease; } .ds-campo select:hover { border-color: #F2DC9B; background: rgba(255,255,255,.09); } .ds-campo select:focus-visible { outline: 2px solid #F2DC9B; outline-offset: 3px; }"
     },
     {
-      "name": "Wordmark Nav",
+      "name": "Glass Header",
       "kind": "nav",
-      "refersTo": "nav-link",
-      "description": "Uppercase Bodoni wordmark with star-separated text links.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-marca\" href=\"#\"><span>Anelise Werle Camillo</span><small>Terapeuta Quântica</small></a><ul><li><a href=\"#\">Sessões</a></li><li><svg viewBox=\"0 0 20 20\" width=\"9\" height=\"9\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M10 0c.6 5.6 4.4 9.4 10 10-5.6.6-9.4 4.4-10 10-.6-5.6-4.4-9.4-10-10C5.6 9.4 9.4 5.6 10 0Z\"/></svg><a href=\"#\">Sobre</a></li><li><svg viewBox=\"0 0 20 20\" width=\"9\" height=\"9\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M10 0c.6 5.6 4.4 9.4 10 10-5.6.6-9.4 4.4-10 10-.6-5.6-4.4-9.4-10-10C5.6 9.4 9.4 5.6 10 0Z\"/></svg><a href=\"#\">Contato</a></li></ul></nav>",
-      "css": ":host{--manto:#0E2269;--manto-fundo:#0A1950;--manto-claro:#1A2F86;--ouro:#D9B25F;--ouro-claro:#F0D58F;--ouro-escuro:#8F6D25;--papel:#F6ECDD;--papel-sombra:#EADAC2;--rosa:#E8A0A6;--rosa-tinta:#9E3F4C;--tinta:#1C2357;--tinta-suave:#3A3F6B;--leite:#EFE6D6;--leite-suave:#BFC6E8;--serif-display:\"Bodoni Moda\",\"Didot\",\"Bodoni 72\",Georgia,serif;--serif-texto:\"Alegreya\",\"Iowan Old Style\",Georgia,serif;--suave:cubic-bezier(0.22,1,0.36,1);} .ds-nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:var(--manto);padding:1.5rem 2rem;font-family:var(--serif-texto);} .ds-marca{display:grid;line-height:1.1;text-decoration:none;} .ds-marca span{font-family:var(--serif-display);text-transform:uppercase;letter-spacing:.04em;font-size:1.3rem;color:var(--leite);} .ds-marca small{font-size:.95rem;color:var(--ouro);letter-spacing:.02em;} .ds-nav ul{display:flex;align-items:center;list-style:none;margin:0;padding:0;} .ds-nav li{display:flex;align-items:center;gap:.55rem;margin-left:.55rem;color:var(--ouro);} .ds-nav li a{color:var(--leite);text-decoration:none;font-size:1.05rem;padding:.3rem 0;background:linear-gradient(var(--ouro),var(--ouro)) 0 100%/0 1px no-repeat;transition:background-size .5s var(--suave),color .3s;} .ds-nav li a:hover{background-size:100% 1px;color:var(--ouro-claro);} .ds-nav a:focus-visible{outline:2px solid var(--ouro-claro);outline-offset:3px;}"
+      "refersTo": "topo-vidro",
+      "description": "Fixed frosted header; wordmark, links, pill.",
+      "html": "<header class=\"ds-topo\"><span class=\"ds-marca\">Anelise Werle Camillo<small>Terapeuta Quântica</small></span><nav><a href=\"#\">Sessões</a><a href=\"#\">Sobre</a><a href=\"#\">Dúvidas</a></nav></header>",
+      "css": ".ds-topo { display: flex; align-items: center; gap: 1.5rem; height: 3.5rem; padding: 0 1.25rem; background: rgba(3,26,19,.55); -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%); } .ds-marca { display: grid; margin-right: auto; font: 1.05rem/1.15 'Bodoni Moda', Didot, Georgia, serif; color: #F3EEE2; } .ds-marca small { font: .75rem system-ui, sans-serif; color: #D6B25E; } .ds-topo nav { display: flex; gap: 1.6rem; } .ds-topo a { text-decoration: none; font: .875rem system-ui, -apple-system, sans-serif; color: #B7CEC2; transition: color .2s ease; } .ds-topo a:hover { color: #F3EEE2; } .ds-topo a:focus-visible { outline: 2px solid #F2DC9B; outline-offset: 3px; border-radius: 4px; }"
     },
     {
       "name": "Session Card",
       "kind": "card",
-      "refersTo": "card-session",
-      "description": "Lace-edged card stock: art plate, title, text, rose-ink booking link.",
-      "html": "<div class=\"ds-manto\"><article class=\"ds-carta\"><div class=\"ds-papel\"><div class=\"ds-arte\"></div><h3>Mesa Quântica</h3><p>Uma ferramenta vibracional que trabalha com mandalas e frequências.</p><a href=\"#\">Agendar Mesa Quântica</a></div></article></div>",
-      "css": ":host{--manto:#0E2269;--manto-fundo:#0A1950;--manto-claro:#1A2F86;--ouro:#D9B25F;--ouro-claro:#F0D58F;--ouro-escuro:#8F6D25;--papel:#F6ECDD;--papel-sombra:#EADAC2;--rosa:#E8A0A6;--rosa-tinta:#9E3F4C;--tinta:#1C2357;--tinta-suave:#3A3F6B;--leite:#EFE6D6;--leite-suave:#BFC6E8;--serif-display:\"Bodoni Moda\",\"Didot\",\"Bodoni 72\",Georgia,serif;--serif-texto:\"Alegreya\",\"Iowan Old Style\",Georgia,serif;--suave:cubic-bezier(0.22,1,0.36,1);} .ds-manto{background:var(--manto);padding:2.5rem;} .ds-carta{width:min(21rem,100%);transform:rotate(-3deg);transition:transform .8s var(--suave);border:10px dotted var(--papel);background:var(--papel);background-clip:padding-box;padding:6px;filter:drop-shadow(0 26px 30px rgba(2,6,30,.55));} .ds-carta:hover,.ds-carta:focus-within{transform:rotate(0) translateY(-.5rem);} .ds-papel{background:var(--papel);color:var(--tinta);border:1px solid rgba(143,109,37,.7);box-shadow:inset 0 0 0 3px var(--papel),inset 0 0 0 4px rgba(143,109,37,.4);padding:1.1rem 1.15rem 1.4rem;text-align:center;display:flex;flex-direction:column;gap:.7rem;font-family:var(--serif-texto);} .ds-arte{aspect-ratio:4/3;border:1px solid rgba(143,109,37,.45);background:radial-gradient(circle at 50% 50%,#FBEADF,#F1C9C0 85%);} .ds-papel h3{margin:0;font-family:var(--serif-display);font-weight:600;font-size:1.4rem;letter-spacing:.015em;} .ds-papel p{margin:0;font-size:1.02rem;line-height:1.5;color:var(--tinta-suave);} .ds-papel a{font-weight:650;color:var(--rosa-tinta);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.3em;} .ds-papel a:focus-visible{outline:2px solid var(--tinta);outline-offset:3px;}"
+      "refersTo": "carta",
+      "description": "Lace-edged ivory card stock with double filete.",
+      "html": "<article class=\"ds-carta\"><div class=\"ds-papel\"><h3>Mesa Quântica</h3><p>Uma ferramenta vibracional.</p><a href=\"#\">Agendar esta sessão</a></div></article>",
+      "css": ".ds-carta { width: 18rem; filter: drop-shadow(0 30px 40px rgba(0,8,5,.55)); transition: transform .5s cubic-bezier(0.23,1,0.32,1); } .ds-carta:hover { transform: translateY(-.5rem); } .ds-papel { display: grid; gap: .65rem; text-align: center; padding: 1rem 1.1rem 1.35rem; background: #F5EEDF; color: #0A3A2C; border: 1px solid rgba(140,106,34,.7); box-shadow: inset 0 0 0 3px #F5EEDF, inset 0 0 0 4px rgba(140,106,34,.4); } .ds-papel h3 { margin: 0; font: 500 1.45rem 'Bodoni Moda', Didot, Georgia, serif; letter-spacing: -0.015em; } .ds-papel p { margin: 0; font: .975rem/1.5 system-ui, sans-serif; color: #2F5A4C; } .ds-papel a { font: 600 .975rem system-ui, sans-serif; color: #0F5040; text-decoration: none; } .ds-papel a:hover { text-decoration: underline; text-underline-offset: .25em; } .ds-papel a:focus-visible { outline: 2px solid #0A3A2C; outline-offset: 3px; }"
     },
     {
-      "name": "Booking Strip",
-      "kind": "custom",
-      "refersTo": "booking-strip",
-      "description": "Double-gold-framed panel holding label, select and gold pill.",
-      "html": "<div class=\"ds-manto\"><form class=\"ds-agendar\" onsubmit=\"return false\"><label>Qual sessão você procura?</label><div class=\"ds-linha\"><select><option>Ainda não sei</option></select><button>Agendar pelo WhatsApp</button></div><p>Abre o WhatsApp com a mensagem pronta.</p></form></div>",
-      "css": ":host{--manto:#0E2269;--manto-fundo:#0A1950;--manto-claro:#1A2F86;--ouro:#D9B25F;--ouro-claro:#F0D58F;--ouro-escuro:#8F6D25;--papel:#F6ECDD;--papel-sombra:#EADAC2;--rosa:#E8A0A6;--rosa-tinta:#9E3F4C;--tinta:#1C2357;--tinta-suave:#3A3F6B;--leite:#EFE6D6;--leite-suave:#BFC6E8;--serif-display:\"Bodoni Moda\",\"Didot\",\"Bodoni 72\",Georgia,serif;--serif-texto:\"Alegreya\",\"Iowan Old Style\",Georgia,serif;--suave:cubic-bezier(0.22,1,0.36,1);} .ds-manto{background:var(--manto);padding:2rem;} .ds-agendar{max-width:34rem;padding:1rem 1.1rem 1.05rem;border:1px solid rgba(217,178,95,.7);outline:1px solid rgba(217,178,95,.35);outline-offset:4px;background:rgba(10,25,80,.55);font-family:var(--serif-texto);} .ds-agendar label{display:block;color:var(--ouro-claro);margin-bottom:.6rem;} .ds-linha{display:flex;gap:.7rem;flex-wrap:wrap;} .ds-linha select{flex:1 1 13rem;min-height:3.1rem;background:transparent;color:var(--leite);border:1px solid rgba(217,178,95,.6);border-radius:2px;padding:.7rem .9rem;font:inherit;} .ds-linha button{min-height:3.1rem;padding:0 1.4rem;border:0;border-radius:999px;background:linear-gradient(180deg,#F6DFA0,var(--ouro) 55%,#C79D47);color:var(--tinta);font:inherit;font-weight:650;cursor:pointer;} .ds-linha button:hover{filter:brightness(1.05);} .ds-agendar p{margin:.6rem 0 0;font-size:.92rem;color:var(--leite-suave);}"
+      "name": "Step Card",
+      "kind": "card",
+      "refersTo": "passo",
+      "description": "Rounded step on the ivory page with roman numeral.",
+      "html": "<div class=\"ds-passo\"><span>I</span><h3>Você me chama no WhatsApp</h3><p>Conte, do seu jeito, o que está vivendo.</p></div>",
+      "css": ".ds-passo { display: grid; gap: .6rem; width: 15rem; padding: 2rem 1.6rem 2.2rem; background: #FBF7EE; border: 1px solid rgba(10,58,44,.1); border-radius: 1.5rem; color: #0A3A2C; } .ds-passo span { font: 3rem/1 'Bodoni Moda', Didot, Georgia, serif; color: #7A5A14; } .ds-passo h3 { margin: 0; font: 500 1.35rem/1.2 'Bodoni Moda', Didot, Georgia, serif; letter-spacing: -0.015em; } .ds-passo p { margin: 0; font: 1rem/1.55 system-ui, sans-serif; color: #2F5A4C; }"
     },
     {
-      "name": "Step Medallion",
+      "name": "Sunburst",
       "kind": "custom",
-      "refersTo": "step-medallion",
-      "description": "Roman numeral in a double rose-ink ring, on card stock.",
-      "html": "<div class=\"ds-folha\"><div class=\"ds-passo\"><span class=\"ds-num\">I</span><div><h3>Você me chama no WhatsApp</h3><p>Conte, do seu jeito, o que está vivendo.</p></div></div></div>",
-      "css": ":host{--manto:#0E2269;--manto-fundo:#0A1950;--manto-claro:#1A2F86;--ouro:#D9B25F;--ouro-claro:#F0D58F;--ouro-escuro:#8F6D25;--papel:#F6ECDD;--papel-sombra:#EADAC2;--rosa:#E8A0A6;--rosa-tinta:#9E3F4C;--tinta:#1C2357;--tinta-suave:#3A3F6B;--leite:#EFE6D6;--leite-suave:#BFC6E8;--serif-display:\"Bodoni Moda\",\"Didot\",\"Bodoni 72\",Georgia,serif;--serif-texto:\"Alegreya\",\"Iowan Old Style\",Georgia,serif;--suave:cubic-bezier(0.22,1,0.36,1);} .ds-folha{background:var(--papel);color:var(--tinta);padding:2rem;font-family:var(--serif-texto);} .ds-passo{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;} .ds-num{display:grid;place-items:center;width:3rem;height:3rem;border-radius:50%;font-family:var(--serif-display);font-weight:600;font-size:1.15rem;color:var(--rosa-tinta);border:1px solid var(--rosa-tinta);box-shadow:0 0 0 3px var(--papel),0 0 0 4px rgba(158,63,76,.35);} .ds-passo h3{margin:.55rem 0 .35rem;font-family:var(--serif-display);font-weight:600;font-size:1.2rem;line-height:1.25;} .ds-passo p{margin:0;color:var(--tinta-suave);}"
+      "refersTo": "raio",
+      "description": "Repeating-conic gold rays faded by a radial mask; the resplendor behind the santinho and medallion.",
+      "html": "<div class=\"ds-raios-fundo\"><div class=\"ds-raios\"></div></div>",
+      "css": ".ds-raios-fundo { position: relative; width: 20rem; height: 20rem; overflow: hidden; background: #062A20; } .ds-raios { position: absolute; inset: 0; background: repeating-conic-gradient(rgba(242,220,155,.3) 0deg .3deg, transparent .3deg 3deg); -webkit-mask: radial-gradient(closest-side, #000 10%, rgba(0,0,0,.45) 38%, transparent 70%); mask: radial-gradient(closest-side, #000 10%, rgba(0,0,0,.45) 38%, transparent 70%); }"
     },
     {
       "name": "FAQ Item",
       "kind": "custom",
-      "refersTo": "",
-      "description": "Native details between gold hairlines with a rotating star toggle.",
-      "html": "<div class=\"ds-manto\"><details class=\"ds-faq\" open><summary>Preciso seguir alguma religião ou crença?</summary><p>Não. Basta abertura para olhar para si.</p></details></div>",
-      "css": ":host{--manto:#0E2269;--manto-fundo:#0A1950;--manto-claro:#1A2F86;--ouro:#D9B25F;--ouro-claro:#F0D58F;--ouro-escuro:#8F6D25;--papel:#F6ECDD;--papel-sombra:#EADAC2;--rosa:#E8A0A6;--rosa-tinta:#9E3F4C;--tinta:#1C2357;--tinta-suave:#3A3F6B;--leite:#EFE6D6;--leite-suave:#BFC6E8;--serif-display:\"Bodoni Moda\",\"Didot\",\"Bodoni 72\",Georgia,serif;--serif-texto:\"Alegreya\",\"Iowan Old Style\",Georgia,serif;--suave:cubic-bezier(0.22,1,0.36,1);} .ds-manto{background:var(--manto);padding:2rem;font-family:var(--serif-texto);} .ds-faq{border-top:1px solid rgba(217,178,95,.4);border-bottom:1px solid rgba(217,178,95,.4);} .ds-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:1.2rem;padding:1.2rem 0;font-weight:600;font-size:1.15rem;color:var(--leite);transition:color .3s;} .ds-faq summary::-webkit-details-marker{display:none;} .ds-faq summary::after{content:\"\";flex:none;width:.75rem;height:.75rem;margin-top:.2rem;background:var(--ouro);clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);transition:rotate .6s var(--suave);} .ds-faq[open] summary::after{rotate:45deg;} .ds-faq summary:hover{color:var(--ouro-claro);} .ds-faq summary:focus-visible{outline:2px solid var(--ouro-claro);outline-offset:3px;} .ds-faq p{margin:0;padding:0 0 1.4rem;color:var(--leite-suave);}"
-    },
-    {
-      "name": "Cartouche",
-      "kind": "custom",
-      "refersTo": "cartouche",
-      "description": "Name plate on the santinho's front, double engraver's-gold border.",
-      "html": "<div class=\"ds-placa\"><p class=\"ds-cartela\">Dragão de Luz</p></div>",
-      "css": ":host{--manto:#0E2269;--manto-fundo:#0A1950;--manto-claro:#1A2F86;--ouro:#D9B25F;--ouro-claro:#F0D58F;--ouro-escuro:#8F6D25;--papel:#F6ECDD;--papel-sombra:#EADAC2;--rosa:#E8A0A6;--rosa-tinta:#9E3F4C;--tinta:#1C2357;--tinta-suave:#3A3F6B;--leite:#EFE6D6;--leite-suave:#BFC6E8;--serif-display:\"Bodoni Moda\",\"Didot\",\"Bodoni 72\",Georgia,serif;--serif-texto:\"Alegreya\",\"Iowan Old Style\",Georgia,serif;--suave:cubic-bezier(0.22,1,0.36,1);} .ds-placa{background:radial-gradient(circle at 50% 45%,#FBEADF,#F1C9C0 85%);padding:3rem;display:grid;place-items:center;} .ds-cartela{margin:0;padding:.3rem 1.3rem .35rem;background:var(--papel);border:3px double var(--ouro-escuro);font-family:var(--serif-display);font-weight:500;font-size:1.1rem;letter-spacing:.03em;color:var(--tinta);box-shadow:0 6px 14px -8px rgba(60,30,10,.5);}"
+      "refersTo": "question",
+      "description": "Native details between gold hairlines with rotating chevron.",
+      "html": "<details class=\"ds-faq\"><summary>Como funciona o atendimento online?</summary><p>Combinamos o horário pelo WhatsApp.</p></details>",
+      "css": ".ds-faq { background: #062A20; border-top: 1px solid rgba(214,178,94,.3); border-bottom: 1px solid rgba(214,178,94,.3); padding: 0 1rem; } .ds-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; font: 600 1.05rem system-ui, sans-serif; color: #F3EEE2; transition: color .2s ease; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq summary::after { content: \"\"; width: .55rem; height: .55rem; border-right: 1.5px solid #D6B25E; border-bottom: 1.5px solid #D6B25E; rotate: 45deg; transition: rotate .25s cubic-bezier(0.23,1,0.32,1); } .ds-faq[open] summary::after { rotate: 225deg; } .ds-faq summary:hover { color: #F2DC9B; } .ds-faq summary:focus-visible { outline: 2px solid #F2DC9B; outline-offset: 3px; } .ds-faq p { margin: 0; padding: 0 0 1.4rem; font: 1.0625rem/1.55 system-ui, sans-serif; color: #B7CEC2; }"
     }
   ],
   "narrative": {
     "northStar": "Santinho de Luz",
-    "overview": "The whole site is a Brazilian santinho, the devotional holy card kept in a wallet, laid on a deep ultramarine mantle. The mantle is the page; everything the visitor reads up close (sessions, how it works, contact, the back of the hero card) is printed on cream card stock with a die-cut lace edge. Gold is the resplendor: rays behind the figure, double filetes around frames, the one pill-shaped action. Rose is the chromolithograph ink on the card stock. The figure on the card is a Dragão de Luz, and its ornaments are suns and four-point stars, never crosses.\n\nDensity is low and ceremonial. Headlines are engraved Didone capitals; running text is a warm humanist book face that reads like a prayer card's verso. Depth comes from paper physically lifted off the mantle (soft drop shadows under the lace) and from a single 3D gesture: the hero santinho turns over as you scroll. The site explicitly refuses the category default of a lilac galaxy hero over a row of service cards.",
+    "overview": "The whole site is a Brazilian santinho, the devotional holy card kept in a wallet, laid on a deep emerald ground and lit by gold. The ground is the page; the one object you hold up close is the hero santinho: cream card stock inside a die-cut lace edge, a Dragão de Luz on the front, a short prayer on the back. Gold is the resplendor: the sunburst rays behind the card and the portrait, the filetes around paper, the one pill-shaped action. The only fully light section, \"Como funciona\", is a printed ivory page. Ornaments are suns and four-point stars, never crosses.\n\nThe materials and motion are Apple-grade. The header is a sheet of frosted glass that densifies once the page leaves the top. The opening is a pinned scene: the stage stays put for 240svh of scroll while the title dissolves, the santinho rises to centre and turns over. The card can also be grabbed and flipped by hand, tracking the finger 1:1 and settling on a spring. Everything else is scroll-driven CSS: rays turn, the garland unrolls, the manifesto lights word by word, steps rise, headings settle out of a blur, the session cards fan out of a single pile. Density is low and ceremonial; Didone headings carry the devotion, the system UI face carries everything read.\n\nThe site explicitly refuses the category default of a lilac galaxy hero over a row of identical service cards.",
     "keyCharacteristics": [
-      "Ultramarine mantle ground; cream card stock only inside a lace (renda) frame.",
-      "Gold for rays, filetes, wordmark title and the single primary action.",
-      "Bodoni Moda uppercase for display and headings; Alegreya for everything read.",
-      "Ornament vocabulary: four-point star, sun, double hairline filete, scalloped lace, conic ray burst.",
-      "One signature motion: the santinho flips on scroll (rotateY); everything else eases on one curve."
+      "Emerald ground in three depths (`esm-950`, `esm-900`, `esm-800`); ivory only on card stock and the \"Como funciona\" page.",
+      "Gold for rays, filetes, headings on emerald and the single primary action.",
+      "Bodoni Moda for display, headings, names and the prayer; the system UI stack (SF Pro Text on Apple devices) for everything read and every control.",
+      "Ornament vocabulary: four-point star, eight-ray sun, scalloped lace, double filete, repeating-conic sunburst.",
+      "Motion: a pinned, scroll-scrubbed hero scene with a spring-driven card flip; scroll-linked CSS animations elsewhere; two curves only."
     ],
     "rules": [
       {
-        "name": "The Two Grounds Rule",
-        "body": "Text sits on either ultramarine or card stock, nothing else. On the mantle use `leite`/`leite-suave` with `ouro-claro` headings; on paper use `tinta`/`tinta-suave` with `rosa-tinta` accents. Paper never appears without its lace frame or gold hairline.",
+        "name": "The Emerald Ground Rule",
+        "body": "The page ground is always emerald. Never swap it for another hue; ivory appears only as card stock or the single printed \"Como funciona\" page.",
         "section": "colors"
       },
       {
         "name": "The Inked Gold Rule",
-        "body": "Bright gold (`ouro`, `ouro-claro`) belongs to the mantle; on cream, gold drops to `ouro-escuro` and rose drops to `rosa-tinta`. Swap the ink, never lower the contrast.",
+        "body": "Bright gold (`ouro`, `ouro-claro`) belongs to emerald; on ivory, gold drops to `ouro-escuro` for lines and `ouro-texto` for text, and links drop to `esm-700`. Swap the ink, never lower the contrast.",
         "section": "colors"
       },
       {
-        "name": "The Engraved Caps Rule",
-        "body": "Bodoni is set in uppercase for display, headings, wordmark and the mobile menu; it goes mixed case only for names printed on card stock (card titles, steps, cartouche, element list).",
+        "name": "The Two Voices Rule",
+        "body": "Bodoni for anything that is a name, a heading or a devotion; the system UI face for anything read or pressed. No third family.",
         "section": "typography"
       },
       {
-        "name": "The Book Face Rule",
-        "body": "Anything longer than a name is Alegreya. No sans-serif exists in this system.",
+        "name": "The Mixed Case Rule",
+        "body": "Bodoni is set in mixed case with negative tracking; uppercase only for the prayer signature.",
         "section": "typography"
       },
       {
-        "name": "The Double Filete Rule",
-        "body": "Frames are drawn as a 1px gold line plus a second, fainter 1px line inset by 3-5px (box-shadow `inset 0 0 0 Npx <ground>, inset 0 0 0 N+1px <gold at ~.35>`), or a `3px double` border on small plates. Single heavy borders are not part of this world.",
+        "name": "The Glass Fallback Rule",
+        "body": "Every translucent surface has an opaque answer: under `prefers-reduced-transparency: reduce` the header becomes solid `esm-950` with no blur.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "**Do** put every light surface inside the lace frame or a double gold filete; cream never floats bare on the mantle.",
-      "**Do** keep gold the only action colour: one gold pill per view, plus the floating WhatsApp button once the booking strip has scrolled away.",
-      "**Do** set headings in uppercase Bodoni Moda and everything read in Alegreya, both self-hosted.",
-      "**Do** use the four-point star and the sun as the ornament set (separators, list bullets, toggles, corners).",
-      "**Do** ease every transition on `cubic-bezier(0.22, 1, 0.36, 1)` and give reduced-motion users the still, side-by-side santinho.",
-      "**Do** swap to `ouro-escuro` and `rosa-tinta` when gold or rose sits on cream."
+      "Do keep emerald the ground and gold the light; ivory only as lace-edged card stock or the single printed page.",
+      "Do keep gold the only action colour: one gold pill or button per view, plus the floating button once the hero booking scrolls away.",
+      "Do set names, headings and devotions in Bodoni Moda and everything read or pressed in the system UI stack.",
+      "Do use the four-point star, the sun, the lace edge and the conic sunburst as the ornament set.",
+      "Do ease on `cubic-bezier(0.23, 1, 0.32, 1)`, scale pressables to 0.97, and gate hover effects to `(hover: hover) and (pointer: fine)`.",
+      "Do put scroll-linked effects behind `@supports (animation-timeline: ...)` and `prefers-reduced-motion: no-preference`, and give every translucent surface a reduced-transparency fallback.",
+      "Do swap to `ouro-escuro`, `ouro-texto` and `esm-700` when gold or emerald sits on ivory."
     ],
     "donts": [
-      "**Don't** use crosses or confessional iconography; the ornaments are suns and stars (the practice requires no religion).",
-      "**Don't** fall back to the category default of a lilac galaxy hero over a row of identical service cards.",
-      "**Don't** introduce a sans-serif, a system display face, or a second display family.",
-      "**Don't** use hard offset shadows, glows, or rounded-corner cards; depth is lifted paper.",
-      "**Don't** add new inks beyond ultramarine, gold, rose and cream."
+      "Don't use crosses or confessional iconography; the ornaments are suns and stars.",
+      "Don't fall back to the category default of a lilac galaxy hero over a row of identical service cards.",
+      "Don't swap the emerald ground for another hue or add a third accent ink.",
+      "Don't add a third type family or set Bodoni body copy.",
+      "Don't use hard offset shadows or glows; depth is glass and lifted paper.",
+      "Don't animate on a timer what the scroll or the hand can drive; the rays never spin on their own."
     ]
   }
 }
