@@ -35,7 +35,9 @@
   --leite-suave: #BFC6E8;
   --serif-display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
   --serif-texto: "Alegreya", "Iowan Old Style", Georgia, serif;
-  --suave: cubic-bezier(0.22, 1, 0.36, 1);
+  --suave: cubic-bezier(0.23, 1, 0.32, 1);
+  --vai-e-volta: cubic-bezier(0.77, 0, 0.175, 1);
+  interpolate-size: allow-keywords;
   --gutter: clamp(1rem, 5vw, 5rem);
   --estrela: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0c.6 5.6 4.4 9.4 10 10-5.6.6-9.4 4.4-10 10-.6-5.6-4.4-9.4-10-10C5.6 9.4 9.4 5.6 10 0Z'/%3E%3C/svg%3E");
   color-scheme: dark;
@@ -44,7 +46,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 1.5rem;
+  scroll-padding-top: 5.5rem;
   scrollbar-color: var(--ouro-escuro) var(--manto-fundo);
   -webkit-text-size-adjust: 100%;
 }
@@ -87,11 +89,27 @@ a { color: inherit; }
 }
 .papel .ph, .como-papel .ph { color: var(--rosa-tinta); background: rgba(158, 63, 76, 0.08); }
 
-/* ---------- topo ---------- */
+/* ---------- topo: camada translúcida que vira vidro ao rolar ---------- */
 .topo {
-  position: absolute; inset: 0 0 auto 0; z-index: 10;
+  position: fixed; inset: 0 0 auto 0; z-index: 10;
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  padding: clamp(1.4rem, 3.2vw, 2.4rem) calc(var(--gutter) + 0.5rem) 0;
+  padding: clamp(.9rem, 2.2vw, 1.4rem) calc(var(--gutter) + 0.5rem);
+  background-color: rgba(10, 25, 80, 0);
+  transition: background-color .35s var(--suave), backdrop-filter .35s var(--suave), -webkit-backdrop-filter .35s var(--suave);
+}
+.topo::after {
+  content: ""; position: absolute; inset: 100% 0 auto; height: 1.25rem; pointer-events: none;
+  background: linear-gradient(rgba(10, 25, 80, .5), rgba(10, 25, 80, 0));
+  opacity: 0; transition: opacity .35s var(--suave);
+}
+.topo.rolado {
+  background-color: rgba(10, 25, 80, .72);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+}
+.topo.rolado::after { opacity: 1; }
+@media (prefers-reduced-transparency: reduce) {
+  .topo.rolado { background-color: var(--manto-fundo); -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
 .marca { text-decoration: none; display: grid; line-height: 1.1; }
 .marca-nome {
@@ -112,7 +130,9 @@ a { color: inherit; }
   transition: background-size .5s var(--suave), color .3s;
   padding: .3rem 0;
 }
-.menu a:hover { background-size: 100% 1px; color: var(--ouro-claro); }
+@media (hover: hover) and (pointer: fine) {
+  .menu a:hover { background-size: 100% 1px; color: var(--ouro-claro); }
+}
 .menu-botao { display: none; }
 
 /* ---------- abertura ---------- */
@@ -144,7 +164,7 @@ a { color: inherit; }
   text-transform: uppercase;
   font-size: clamp(2.7rem, 1.2rem + 5.4vw, 5.9rem);
   line-height: 1.08;
-  letter-spacing: .005em;
+  letter-spacing: -.01em;
   color: var(--ouro-claro);
 }
 .abertura-lead {
@@ -196,17 +216,20 @@ a { color: inherit; }
   font: inherit; font-weight: 650; font-size: 1.05rem; letter-spacing: .01em;
   text-decoration: none; cursor: pointer;
   box-shadow: 0 14px 28px -14px rgba(2, 6, 30, .8), inset 0 1px 0 rgba(255, 255, 255, .55), inset 0 -1px 0 rgba(120, 85, 20, .35);
-  transition: transform .5s var(--suave), box-shadow .5s var(--suave), filter .3s;
+  transition: transform 160ms var(--suave), box-shadow .3s var(--suave), filter .3s ease;
 }
-.botao-ouro:hover { filter: brightness(1.05); box-shadow: 0 18px 32px -14px rgba(2, 6, 30, .9), inset 0 1px 0 rgba(255, 255, 255, .6); }
-.botao-ouro:active { transform: scale(.98); }
+.botao-ouro > span:first-child { transition: filter .2s ease, opacity .2s ease; }
+.botao-ouro.trocando > span:first-child { filter: blur(2px); opacity: .5; }
+.botao-ouro:active { transform: scale(.97); }
+@media (hover: hover) and (pointer: fine) {
+  .botao-ouro:hover { filter: brightness(1.05); box-shadow: 0 18px 32px -14px rgba(2, 6, 30, .9), inset 0 1px 0 rgba(255, 255, 255, .6); }
+  }
 .botao-icone {
   display: grid; place-items: center; width: 2.3rem; height: 2.3rem; border-radius: 50%;
   background: rgba(28, 35, 87, .12);
   transition: transform .5s var(--suave);
 }
 .botao-icone svg { width: 1.25rem; height: 1.25rem; }
-.botao-ouro:hover .botao-icone { transform: translateX(2px) scale(1.06); }
 
 /* cena do santinho */
 .abertura-cena {
@@ -222,24 +245,28 @@ a { color: inherit; }
   background: repeating-conic-gradient(from 0deg, rgba(240, 213, 143, .55) 0deg .35deg, transparent .35deg 3deg);
   -webkit-mask: radial-gradient(closest-side, #000 14%, rgba(0, 0, 0, .55) 42%, transparent 100%);
   mask: radial-gradient(closest-side, #000 14%, rgba(0, 0, 0, .55) 42%, transparent 100%);
-  animation: respirar 2.5s ease-in-out 2 alternate, acender 1.6s var(--suave) both;
+  animation: acender 1.6s var(--suave) both;
 }
-@keyframes respirar { from { opacity: .7; scale: .97; } to { opacity: 1; scale: 1.03; } }
+@keyframes girar-raios { to { rotate: 40deg; } }
 @keyframes acender { from { opacity: 0; } }
 
 .santinho-giro {
   width: min(30rem, 74%, calc(70svh * 1100 / 1640));
   aspect-ratio: 1100 / 1640;
   transform-style: preserve-3d;
-  transform: rotateY(calc(-14deg + var(--giro, 0) * 194deg)) rotateX(3deg);
+  transform: rotateY(-14deg) rotateX(3deg);
+  touch-action: pan-y;
+  cursor: grab;
+  transition: scale 160ms var(--suave);
 }
+.santinho-giro.segurando { cursor: grabbing; scale: .985; }
 @keyframes surgir { from { opacity: 0; translate: 0 3rem; } }
 .santinho {
   position: relative; width: 100%; height: 100%;
   transform-style: preserve-3d;
-  transition: transform 1.2s var(--suave);
+  -webkit-user-select: none; user-select: none;
 }
-.santinho.virado { transform: rotateY(180deg); }
+.santinho img { -webkit-user-drag: none; pointer-events: none; }
 .face {
   position: absolute; inset: 0; margin: 0;
   backface-visibility: hidden; -webkit-backface-visibility: hidden;
@@ -303,9 +330,10 @@ a { color: inherit; }
   text-decoration-color: rgba(240, 213, 143, .45);
   transition: text-decoration-color .3s;
 }
-.virar:hover { text-decoration-color: var(--ouro-claro); }
+@media (hover: hover) and (pointer: fine) { .virar:hover { text-decoration-color: var(--ouro-claro); } }
+.dica { margin-top: -.6rem; font-size: .88rem; color: var(--leite-suave); }
 .virar svg { width: .8rem; height: .8rem; transition: rotate .8s var(--suave); }
-.abertura-cena:has(.santinho.virado) .virar svg { rotate: 180deg; }
+.virar.no-verso svg { rotate: 180deg; }
 
 /* ---------- seções ---------- */
 section { position: relative; }
@@ -335,7 +363,8 @@ h2 {
 .carta-mesa { transform: rotate(-3deg) translateY(1.6rem); }
 .carta-dragoes { transform: translateY(-.4rem); z-index: 1; }
 .carta-harmonia { transform: rotate(3deg) translateY(1.6rem); }
-.carta:hover, .carta:focus-within { transform: rotate(0) translateY(-.5rem); z-index: 2; }
+.carta:focus-within { transform: rotate(0) translateY(-.5rem); z-index: 2; }
+@media (hover: hover) and (pointer: fine) { .carta:hover { transform: rotate(0) translateY(-.5rem); z-index: 2; } }
 .carta .renda { height: auto; border-width: 17px; }
 .carta .papel { height: auto; padding: 1.1rem 1.15rem 1.4rem; text-align: center; gap: .7rem; }
 .carta-arte {
@@ -359,7 +388,7 @@ h2 {
   text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .3em;
 }
 .carta-link svg { width: 1rem; height: 1rem; transition: transform .5s var(--suave); }
-.carta-link:hover svg { transform: translate(2px, -2px); }
+.carta-link:active { transform: scale(.97); }
 .aviso-curto { margin-top: clamp(3rem, 6vw, 4.5rem); text-align: center; font-size: .95rem; color: var(--leite-suave); }
 
 /* sobre */
@@ -462,7 +491,12 @@ h2 {
   transition: rotate .6s var(--suave);
 }
 .lista-perguntas details[open] summary::after { rotate: 45deg; }
-.lista-perguntas summary:hover { color: var(--ouro-claro); }
+@media (hover: hover) and (pointer: fine) { .lista-perguntas summary:hover { color: var(--ouro-claro); } }
+.lista-perguntas details::details-content {
+  block-size: 0; overflow-y: clip;
+  transition: block-size .35s var(--suave), content-visibility .35s allow-discrete;
+}
+.lista-perguntas details[open]::details-content { block-size: auto; }
 .lista-perguntas details p { padding: 0 0 1.4rem; color: var(--leite-suave); max-width: 42rem; }
 .apoio { margin-top: 2.2rem; font-size: .98rem; color: var(--leite-suave); text-align: center; }
 
@@ -502,6 +536,7 @@ h2 {
 }
 .whats-flutuante svg { width: 1.6rem; height: 1.6rem; }
 .whats-flutuante.escondido { opacity: 0; translate: 0 1rem; pointer-events: none; }
+.whats-flutuante:active { scale: .95; }
 
 /* ---------- telas menores ---------- */
 @media (max-width: 860px) {
@@ -520,14 +555,16 @@ h2 {
   .menu-botao[aria-expanded="true"] .menu-linhas::after { top: calc(50% - .75px); transform: rotate(-45deg); }
   .topo:has(.menu-botao[aria-expanded="true"]) { position: fixed; }
   .marca { position: relative; z-index: 12; }
+  /* o menu nasce do botão e volta para ele */
   .menu {
+    --origem: calc(100% - var(--gutter) - 1.6rem) 2.2rem;
     position: fixed; inset: 0; z-index: 11;
     display: grid; place-items: center;
     background: rgba(10, 25, 80, .97);
-    opacity: 0; visibility: hidden;
-    transition: opacity .5s var(--suave), visibility 0s .5s;
+    clip-path: circle(0 at var(--origem)); visibility: hidden;
+    transition: clip-path .3s var(--vai-e-volta), visibility 0s .3s;
   }
-  .menu.aberto { opacity: 1; visibility: visible; transition: opacity .5s var(--suave); }
+  .menu.aberto { clip-path: circle(150vmax at var(--origem)); visibility: visible; transition: clip-path .5s var(--suave); }
   .menu ul { flex-direction: column; gap: 1.3rem; }
   .menu li + li::before { display: none; }
   .menu a {
@@ -574,5 +611,32 @@ h2 {
   .santinho { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; transform: none !important; }
   .face { position: relative; inset: auto; aspect-ratio: 1100 / 1640; backface-visibility: visible; -webkit-backface-visibility: visible; }
   .verso { transform: none; }
-  .virar { display: none; }
+  .virar, .dica { display: none; }
+  .santinho-giro { cursor: auto; }
 }
+
+/* ---------- movimento ligado à rolagem (onde o navegador suporta) ---------- */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* os raios do resplendor giram com a rolagem, não sozinhos */
+    .raios { animation: acender 1.6s var(--suave) both, girar-raios linear both; animation-timeline: auto, scroll(root); }
+    .medalhao::before { animation: girar-raios linear both; animation-timeline: view(); }
+    /* a guirlanda se desenrola do centro */
+    .guirlanda img { animation: desenrolar linear backwards; animation-timeline: view(); animation-range: entry 10% cover 40%; }
+    /* o papel do "Como funciona" sobe da mesa */
+    .como-papel { animation: subir-papel linear backwards; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+  }
+  @media (prefers-reduced-motion: no-preference) and (min-width: 861px) {
+    /* os santinhos das sessões saem de um monte só e abrem em leque */
+    .leque { view-timeline: --leque block; }
+    .carta-mesa, .carta-dragoes, .carta-harmonia { animation: linear backwards; animation-timeline: --leque; animation-range: entry 5% cover 42%; }
+    .carta-mesa { animation-name: leque-esq; }
+    .carta-dragoes { animation-name: leque-meio; }
+    .carta-harmonia { animation-name: leque-dir; }
+  }
+}
+@keyframes desenrolar { from { clip-path: inset(0 50% 0 50%); opacity: .4; } }
+@keyframes subir-papel { from { transform: translateY(3rem) scale(.97); } }
+@keyframes leque-esq { from { transform: translateX(104%) rotate(0deg) scale(.94); } }
+@keyframes leque-meio { from { transform: translateY(2.5rem) scale(.96); } }
+@keyframes leque-dir { from { transform: translateX(-104%) rotate(0deg) scale(.94); } }
