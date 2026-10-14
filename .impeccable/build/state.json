@@ -12,9 +12,17 @@
       "status": "open",
       "openedAt": "2026-10-14T11:38:47.879Z",
       "closedAt": null,
-      "attempts": 0,
+      "attempts": 1,
       "notes": [],
-      "gate": null,
+      "gate": {
+        "ok": false,
+        "reasons": [
+          "0 comps under .impeccable/mocks; the comp round puts three compositional options of the chosen direction in front of the user (reference/visualize.md). Generate the missing ones (harness image tool or generate-image.mjs), each with a .json sidecar holding its prompt.",
+          "no comp is approved: put the three comps in front of the user (decision page via serve-question.mjs, or the structured question tool), then set \"approved\": true in the chosen comp's sidecar. A delegated pick is recorded the same way and disclosed."
+        ],
+        "summary": "0 comps, 0 approved",
+        "at": "2026-10-14T13:33:41.233Z"
+      },
       "forced": null
     },
     "spec": {
