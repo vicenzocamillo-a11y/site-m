@@ -2,7 +2,9 @@
 
 Site de uma página para agendar atendimentos pelo WhatsApp. HTML, CSS e JS puros, sem build.
 
-O conceito visual é o **Santinho de Luz**: o site é um santinho brasileiro (o cartãozinho devocional de renda de papel) cuja figura é um Dragão de Luz dourado. O cartão da abertura vira sozinho conforme a pessoa rola a página e mostra o verso, escrito como uma oração.
+O conceito visual é o **Santinho de Luz**: o site é um santinho brasileiro (o cartãozinho devocional de renda de papel) cuja figura é um Dragão de Luz dourado, sobre verde esmeralda e dourado. A abertura fica presa enquanto a pessoa rola: o título se desfaz, o santinho sobe até o centro e vira, mostrando o verso escrito como uma oração. Dá também para arrastar o cartão com o dedo ou virar pelo botão.
+
+Movimento no estilo Apple: menu de vidro, molas que herdam a velocidade do dedo, e transições ligadas à rolagem (raios girando, guirlanda que se desenrola, frase que acende palavra por palavra, passos que sobem, cartões que se abrem em leque). Quem pede menos movimento no sistema vê tudo parado.
 
 ## Ver no computador
 
@@ -15,7 +17,7 @@ Abrir o `index.html` direto com dois cliques também funciona, mas as fontes só
 
 ## O que falta preencher
 
-Tudo o que aparece no site entre `[[ ]]` com contorno tracejado rosa é informação que não encontrei publicamente e precisa vir da Anelise:
+Tudo o que aparece no site entre `[[ ]]` com contorno tracejado dourado é informação que não encontrei publicamente e precisa vir da Anelise:
 
 | O quê | Onde |
 |---|---|
@@ -45,7 +47,7 @@ O site já aponta para `https://vicenzocamillo-a11y.github.io/site-m/` (link can
 Prompts usados:
 - **Dragão de Luz (frente do santinho):** ilustração de santinho em cromolitografia, sem texto: um Dragão de Luz dourado e sereno subindo em S diante de um resplendor de raios gravados, fundo rosa-pêssego com grão de papel, sóis dourados nos cantos de cima e rosas com folhas esmeralda nos cantos de baixo. Modelo Nano Banana 2.1.
 - **Cartões Mesa Quântica e Harmonização:** dois santinhos lado a lado no mesmo estilo, uma mesa radiônica circular gravada com pêndulo e um sol em resplendor, rosas nos cantos, recortados em duas imagens. Modelo Nano Banana 2.1.
-- **Guirlanda:** faixa ornamental de rosas, folhas esmeralda, arabescos dourados e dois sóis, sobre azul-ultramar liso (fundo removido depois). Modelo Nano Banana 2.1.
+- **Guirlanda:** faixa ornamental de rosas, folhas esmeralda, arabescos dourados e dois sóis, sobre fundo liso (fundo removido depois). Modelo Nano Banana 2.1.
 
 ## Publicar
 
@@ -56,10 +58,10 @@ Qualquer hospedagem de site estático serve:
 ## Arquivos
 
 - `index.html` — todo o conteúdo
-- `assets/site.css` — visual (cores e fontes no topo, em `:root`)
-- `assets/site.js` — menu do celular, virar o santinho, botão flutuante do WhatsApp
+- `assets/site.css` — visual (cores esmeralda e dourado e fontes no topo, em `:root`)
+- `assets/site.js` — menu do celular, cena da abertura, arrastar e virar o santinho com mola, botão flutuante do WhatsApp
 - `assets/renda.svg` — a borda de renda de papel dos cartões
-- `assets/fonts/` — Bodoni Moda e Alegreya (licença SIL OFL, arquivos `OFL-*.txt`)
+- `assets/fonts/` — Bodoni Moda (licença SIL OFL, `OFL-bodoni-moda.txt`); o texto corrido usa a fonte do sistema (SF Pro no iPhone e no Mac)
 - `PESQUISA.md` — o que a pesquisa encontrou sobre a Anelise e as fontes
 - `PRODUCT.md`, `DESIGN.md`, `.impeccable/` — registro do produto e do sistema visual para futuras edições
 

@@ -12,6 +12,24 @@
         ],
         "createdAt": "2026-10-14T13:36:58.438Z",
         "reason": "Claude triage: the three flagged containers (.papel/.contato-papel, section.dragoes, .como-papel) all have 9px to 4rem padding set with clamp()/var(); detector reports them flush because it does not resolve clamp()/var() padding"
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-14T16:36:00.000Z",
+        "reason": "Claude triage: the repeating-conic-gradient is the resplendor sunburst (.raios, .medalhao::before), the santinho's core brand motif, not decorative stripes"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-14T16:36:00.000Z",
+        "reason": "Claude triage: flagged elements are Bodoni Moda display headings only (h1 lines 1.02, h2 1.04, h3 1.2), checked in the browser; body text is 1.5-1.55"
       }
     ]
   }

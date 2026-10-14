@@ -37,6 +37,8 @@ Her own public vocabulary (Instagram posts signed "Anelise Werle Camillo Terapeu
 
 - Name as she signs it: "Anelise Werle Camillo — Terapeuta Quântica".
 - Voice: warm, spiritual, uplifting, about light, positivity and helping; never clinical, never hype.
+- Colors (user-pinned): emerald green and gold are the primary colors. Do not swap the ground for another hue.
+- Feel (user-pinned): Apple-grade materials and motion, with generous, scroll-linked transitions.
 
 ## Evidence on Hand
 
