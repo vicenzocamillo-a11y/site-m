@@ -29,7 +29,6 @@
   --papel-sombra: #EADAC2;
   --rosa: #E8A0A6;
   --rosa-tinta: #9E3F4C;
-  --esmeralda: #2E7D5B;
   --tinta: #1C2357;
   --tinta-suave: #3A3F6B;
   --leite: #EFE6D6;
@@ -346,7 +345,6 @@ h2 {
   color: var(--ouro-escuro);
   margin-bottom: .4rem;
 }
-.carta-arte.mandala { padding: .9rem; }
 .carta-foto { object-fit: cover; object-position: 50% 24%; }
 .carta h3 {
   font-family: var(--serif-display); font-weight: 600;
@@ -558,7 +556,6 @@ h2 {
   .carta:hover, .carta:focus-within { transform: none; }
 
   .sobre { grid-template-columns: 1fr; }
-  .medalhao-oval .ph { color: #F4C3C7; }
 .medalhao-oval { width: min(15rem, 62vw); }
   .passos { grid-template-columns: 1fr; }
 }

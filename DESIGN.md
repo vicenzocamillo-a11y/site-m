@@ -185,7 +185,7 @@ A two-ground palette: ultramarine for the mantle, cream for card stock, with gol
 **Character:** A high-contrast engraved roman set in capitals, like the lettering on a devotional print, over a calligraphic humanist text face that keeps long reading warm rather than clinical.
 
 ### Hierarchy
-- **Display** (Bodoni 500, uppercase, optical sizing auto): the hero line only, in `ouro-claro` with a soft dark text shadow.
+- **Display** (Bodoni 500, uppercase, optical sizing auto): the hero line only, in `ouro-claro`, no text shadow.
 - **Headline** (Bodoni 600, uppercase): every section `h2`; `ouro-claro` on the mantle, `tinta` on paper.
 - **Title** (Bodoni 600, mixed case, 1.4rem on session cards; 1.2rem / 1.25 on steps): names on card stock.
 - **Wordmark** (Bodoni uppercase, 0.04em): the header name and footer name (1.2rem, 0.05em); the subtitle under it is Alegreya 0.95rem in `ouro`.
