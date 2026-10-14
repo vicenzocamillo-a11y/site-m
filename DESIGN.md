@@ -21,9 +21,9 @@ colors:
   tinta: "#0A3A2C"
   tinta-2: "#2F5A4C"
   vidro: "rgba(3, 26, 19, 0.55)"
-  vidro-denso: "rgba(3, 26, 19, 0.72)"
+  vidro-denso: "rgba(3, 26, 19, 0.82)"
   vidro-borda: "rgba(3, 26, 19, 0.45)"
-  folha-menu: "rgba(3, 26, 19, 0.96)"
+  folha-menu: "esm-950 + gold glow top-right + esm-700 glow bottom-left (opaque)"
   raio: "rgba(242, 220, 155, 0.3)"
   raio-medalhao: "rgba(214, 178, 94, 0.35)"
   filete: "rgba(214, 178, 94, 0.3)"
@@ -265,7 +265,7 @@ components:
 
 The whole site is a Brazilian santinho, the devotional holy card kept in a wallet, laid on a deep emerald ground and lit by gold. The ground is the page; the one object you hold up close is the hero santinho: cream card stock inside a die-cut lace edge, a Dragão de Luz on the front, a short prayer on the back. Gold is the resplendor: the sunburst rays behind the card and the portrait, the filetes around paper, the one pill-shaped action. The only fully light section, "Como funciona", is a printed ivory page. Ornaments are suns and four-point stars, never crosses.
 
-The materials and motion are Apple-grade. The header is a sheet of frosted glass that densifies once the page leaves the top. The opening is a pinned scene: the stage stays put for 240svh of scroll while the title dissolves, the santinho rises to centre and turns over. The card can also be grabbed and flipped by hand, tracking the finger 1:1 and settling on a spring. Everything else is scroll-driven CSS: rays turn, the garland unrolls, the manifesto lights word by word, steps rise, headings settle out of a blur, the session cards fan out of a single pile. Density is low and ceremonial; Didone headings carry the devotion, the system UI face carries everything read.
+The materials and motion are Apple-grade. The header is a sheet of frosted glass that densifies once the page leaves the top. The opening is a pinned scene: the stage stays put for 180svh of scroll while the title dissolves, the santinho rises to centre and turns over (the turn completes at 80% of the scene), with gold motes drifting up behind it and a sheen crossing the paper as it turns. The card can also be grabbed and flipped by hand, tracking the finger 1:1 and settling on a spring. Everything else either reveals just before it is seen (headings rise word by word out of a mask, copy and lists follow in a short stagger) or follows the scroll (rays turn, the garland unrolls, the manifesto lights word by word, the ivory page opens like a panel, the session cards fan out of a single pile). Density is low and ceremonial; Didone headings carry the devotion, the system UI face carries everything read.
 
 The site explicitly refuses the category default of a lilac galaxy hero over a row of identical service cards.
 
@@ -274,7 +274,7 @@ The site explicitly refuses the category default of a lilac galaxy hero over a r
 - Gold for rays, filetes, headings on emerald and the single primary action.
 - Bodoni Moda for display, headings, names and the prayer; the system UI stack (SF Pro Text on Apple devices) for everything read and every control.
 - Ornament vocabulary: four-point star, eight-ray sun, scalloped lace, double filete, repeating-conic sunburst.
-- Motion: a pinned, scroll-scrubbed hero scene with a spring-driven card flip; scroll-linked CSS animations elsewhere; two curves only.
+- Motion: a pinned, scroll-scrubbed hero scene with a spring-driven card flip; fast reveals and scroll-linked effects elsewhere that work in every browser; two curves only.
 
 ## Colors
 
@@ -304,7 +304,7 @@ Emerald and gold are the house colours (user-pinned brand commitment); ivory is 
 - **Soft Ink** (`tinta-2`): body copy on paper.
 
 ### Material roles
-- **Glass** (`vidro` at rest, `vidro-denso` once scrolled, `vidro-borda` for the fading under-edge): the header tint under the blur. **Menu sheet** (`folha-menu`): the mobile menu's near-opaque emerald.
+- **Glass** (`vidro` at rest, `vidro-denso` once scrolled, `vidro-borda` for the fading under-edge): the header tint under the blur. **Menu sheet** (`folha-menu`): the mobile menu's opaque `esm-950` with its own soft gold and emerald light, never see-through.
 - **Field** (`campo`, `campo-hover`): the translucent white wash inside the select.
 - **Light and shade** (`brilho`, `sombra`, `sombra-funda`, `sombra-renda`, `poco-icone`): the inset top highlight, ambient drop shadows, the lace lift and the icon well inside the gold button.
 - **Placeholder wash** (`marca-ph`, `marca-ph-papel`): the fill behind unconfirmed content.
@@ -349,7 +349,7 @@ A single centred column with ceremony. The gutter is `spacing.gutter`; most sect
 - **Sessions:** three lace cards fanned like a hand (outer ±3deg and dropped 1.6rem, centre raised); hover or focus straightens and lifts.
 - **About:** 0.8fr / 1.2fr split, oval medallion left, then the manifesto centred below.
 - **Como funciona:** four step cards in a grid; two columns at 960px, one at 560px.
-- **Breakpoints:** 960px (steps to two columns); 860px (nav becomes a clip-path sheet, booking stacks to `min(22rem, 100%)`, the fan becomes a horizontal scroll-snap rail of `min(19rem, 80vw)` cards, about stacks); 560px (one-column steps, wordmark subtitle hidden).
+- **Breakpoints:** 960px (steps to two columns); 1000px (the fan becomes a horizontal scroll-snap rail of `min(19rem, 80vw)` cards); 860px (nav becomes a clip-path sheet, booking stacks to `min(22rem, 100%)`, about stacks); 560px (one-column steps, wordmark subtitle hidden).
 
 ## Elevation & Depth
 
@@ -389,7 +389,7 @@ Glass header. Links in `texto-2`, hovering to `texto`. Below 860px a two-line ic
 - **Step card:** `marfim-passo`, 1px `borda-passo`, `rounded.passo`, roman numeral in `ouro-texto`.
 
 ### Santinho (signature)
-A 1100:1640 lace card with two faces. Front: Dragão de Luz art with the cartouche "Dragão de Luz". Back: a sun in `ouro-escuro`, the prayer between two fading `esm-700` rules, uppercase signature. Scroll drives it: over the first 28% of the scene the text fades, lifts 6svh, shrinks 4% and blurs 6px; over 34% the card rises from 76% of the viewport to centre and grows from 0.86 to 1; from 40% to 78% it turns from -12deg to 180deg (rotateX 3deg, perspective 1600px), all eased with an ease-out cubic. The hand adds its own angle: drag tracks 1:1 after an 8px slop, release projects momentum (deceleration 0.995 over the last 100ms) to pick a face and hands the finger's velocity to a spring (response 0.4s, damping 0.8); the button and a plain tap use a critically damped spring (response 0.45s, damping 1). Held, the card scales to 0.985.
+A 1100:1640 lace card with two faces. Front: Dragão de Luz art with the cartouche "Dragão de Luz". Back: a sun in `ouro-escuro`, the prayer between two fading `esm-700` rules, uppercase signature. Scroll drives it: over the first 22% of the scene the text fades, lifts 6svh, shrinks 4%, the headline and lead blur 6px (the form only fades) and the text stops taking taps; the card sits above the text (z-index 3) and over 45% rises from its resting place (30svh below centre, or just under the text on short screens) to centre and grows from 0.86 to 1; from 40% to 78% it turns from -12deg to 180deg (rotateX 3deg, perspective 1600px), all eased with an ease-out cubic. The hand adds its own angle: drag tracks 1:1 after an 8px slop, release projects momentum (deceleration 0.995 over the last 100ms) to pick a face and hands the finger's velocity to a spring (response 0.4s, damping 0.8); the button and a plain tap use a critically damped spring (response 0.45s, damping 1). Held, the card scales to 0.985.
 
 ### FAQ
 Native `details` between `filete` hairlines; question in `question` weight 600 `texto`, a gold chevron rotating from 45deg to 225deg; the answer height animates through `::details-content` (0.3s ease-out, `interpolate-size: allow-keywords`).
@@ -398,10 +398,16 @@ Native `details` between `filete` hairlines; question in `question` weight 600 `
 A 3.5rem gilt circle bottom-right (safe-area aware); hidden and inert while the hero booking is in view, then rises 1rem and fades in (0.25s ease-out).
 
 ### Placeholder mark
-Unconfirmed content stays visibly marked: `ouro-claro` text on `marca-ph`, 1px dashed outline (`ouro-texto` on `marca-ph-papel` on paper). A content-state marker, removed when the fact is confirmed.
+Unconfirmed content stays visibly marked as a calm gold tag: `ouro-claro` text on a faint gold wash, a 1px solid gold border, a leading four-point star, one inline-block label that wraps inside itself (`ouro-texto` with a darker border on paper). The `[[...]]` text stays. A content-state marker, removed when the fact is confirmed. The empty portrait medallion shows a foil `AWC` monogram above its tag; it is typography, never a drawn portrait.
 
 ### Motion system
-Two curves: ease-out `cubic-bezier(0.23, 1, 0.32, 1)` for everything that arrives or responds, ease-in-out `cubic-bezier(0.77, 0, 0.175, 1)` only for the menu closing. Opening entry: title lines, lead and booking materialise from 8px blur and 0.5em down over 900ms, staggered 80ms; rays fade in over 1600ms. Behind `@supports (animation-timeline: view())`: rays rotate 40deg with root scroll; the medallion rays rotate with its view; the garland unrolls from the centre; the manifesto lights word by word from 20% opacity; steps rise 2.5rem staggered; section headings settle from 6px blur; on desktop the three cards fan out of one pile; on mobile the centred card in the rail scales to 1 while neighbours sit at 0.92 / 60%. Under `prefers-reduced-motion: reduce` the scene unpins, both santinho faces sit side by side, flip controls hide, and nothing is left hidden.
+Two curves: ease-out `cubic-bezier(0.23, 1, 0.32, 1)` for everything that arrives or responds, ease-in-out `cubic-bezier(0.77, 0, 0.175, 1)` only for the menu closing (the gold thread in Como funciona draws with ease-out, no delay). Speed first: nothing above the fold animates in; the first paint shows the headline, lead and booking at full opacity.
+
+Reveals (every browser): `site.js` adds `html.anima` and puts `.in` on each target when it is one full screen away (above or below), so the 300ms (`--revela`) transition is done before the visitor arrives, even on a fast flick; whatever is within two screens when the script runs (right after the first paint) is shown with no transition. Only targets that enter together are staggered (35ms, capped at 4). Targets are marked in the markup: `data-r` (the element fades and rises 14px), `data-r="grupo"` (its children do, 35ms apart), `data-r="proprio"` (component rules: medallion, contact sun, mobile card rail). Section headings rise word by word out of a mask (no blur: gold-leaf `background-clip: text` under `filter` is unreliable in Safari). Disclaimers (`aviso-curto`, the CVV/SAMU line, the footer) never get a hidden state.
+
+Scroll-linked (every browser): where `animation-timeline: view()` exists, CSS drives it; elsewhere (iOS before 26, Firefox, or `?fallback`) `site.js` adds `html.sem-timeline` and one passive scroll listener writes the same values each frame for all five effects (no IntersectionObserver gating, so no stale frame after a jump). The hero rays rotate only on the CSS path. Rays rotate 30deg across the hero scene; the medallion rays turn with its view; the garland unrolls from the centre while entering; the manifesto lights word by word from 40% opacity and is fully lit by the time it reaches mid-screen; the ivory Como funciona page is a rounded inset panel (radius 20-32px, fixed) that enters at 0.92 scale and is at 1 when its top reaches mid-screen; on desktop the three cards fan out of one pile; on mobile the centred card in the rail sits at 1 while neighbours sit at 0.94 / 82%.
+
+The gold motes in the hero are the single ambient loop: 12 to 20 points drifting up at constant speed, paused when the hero is off screen. Under `prefers-reduced-motion: reduce` nothing moves: reveals become a 200ms opacity fade, transitions keep only opacity and colour, the FAQ answer fades in; no scrub and no motes; the scene unpins, both santinho faces sit side by side (stacked at 400px and below), flip controls hide.
 
 ## Do's and Don'ts
 
@@ -411,7 +417,7 @@ Two curves: ease-out `cubic-bezier(0.23, 1, 0.32, 1)` for everything that arrive
 - **Do** set names, headings and devotions in Bodoni Moda and everything read or pressed in the system UI stack.
 - **Do** use the four-point star, the sun, the lace edge and the conic sunburst as the ornament set.
 - **Do** ease on `cubic-bezier(0.23, 1, 0.32, 1)`, scale pressables to 0.97, and gate hover effects to `(hover: hover) and (pointer: fine)`.
-- **Do** put scroll-linked effects behind `@supports (animation-timeline: ...)` and `prefers-reduced-motion: no-preference`, and give every translucent surface a reduced-transparency fallback.
+- **Do** give every scroll-linked effect both paths: CSS under `@supports (animation-timeline: ...)` prefixed with `html:not(.sem-timeline)`, and the same values from the JS fallback; keep both under `prefers-reduced-motion: no-preference`, and give every translucent surface a reduced-transparency fallback.
 - **Do** swap to `ouro-escuro`, `ouro-texto` and `esm-700` when gold or emerald sits on ivory.
 
 ### Don't:
@@ -420,4 +426,5 @@ Two curves: ease-out `cubic-bezier(0.23, 1, 0.32, 1)` for everything that arrive
 - **Don't** swap the emerald ground for another hue or add a third accent ink.
 - **Don't** add a third type family or set Bodoni body copy.
 - **Don't** use hard offset shadows or glows; depth is glass and lifted paper.
-- **Don't** animate on a timer what the scroll or the hand can drive; the rays never spin on their own.
+- **Don't** animate on a timer what the scroll or the hand can drive; the rays never spin on their own. The hero motes are the one ambient exception.
+- **Don't** make anything wait: no load intro above the fold, reveals finish before they are seen.

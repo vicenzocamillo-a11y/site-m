@@ -28,6 +28,11 @@
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --revela: 300ms; /* tudo o que entra com a rolagem: curto, para nada parecer carregando */
+
+  /* folha de ouro para os títulos, e a espera quente enquanto a arte do CDN chega */
+  --folha: linear-gradient(180deg, #FBEBC0 0%, #EBCB7C 42%, #C29A47 74%, #F2DC9B 100%);
+  --espera: radial-gradient(ellipse 70% 55% at 50% 42%, rgba(255, 240, 200, .95), rgba(255, 240, 200, 0) 70%), linear-gradient(170deg, #F6D9C8, #EDBFAA 55%, #E4AE97);
 
   --gutter: clamp(1.25rem, 5vw, 5rem);
   --topo-h: 3.5rem;
@@ -41,6 +46,7 @@ html {
   scroll-padding-top: calc(var(--topo-h) + 1.5rem);
   scrollbar-color: var(--ouro-escuro) var(--esm-950);
   -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 body {
   margin: 0;
@@ -79,14 +85,23 @@ h2 {
 .pular:focus { top: 1rem; }
 
 .ph {
+  /* o que falta a Anelise preencher: uma etiqueta dourada, visível mas calma */
   color: var(--ouro-claro);
-  background: rgba(242, 220, 155, .1);
-  outline: 1px dashed currentColor;
-  outline-offset: 1px;
-  border-radius: 4px;
-  padding: 0 .3em;
+  background: rgba(242, 220, 155, .07);
+  border: 1px solid rgba(214, 178, 94, .42);
+  display: inline-block; max-width: 100%; vertical-align: baseline;
+  line-height: 1.35; text-wrap: balance;
+  border-radius: .6em;
+  padding: .12em .6em .14em;
+  font-size: .94em;
 }
-.papel .ph, .como .ph { color: var(--ouro-texto); background: rgba(122, 90, 20, .08); }
+.ph::before {
+  content: ""; display: inline-block; width: .55em; height: .55em; margin-right: .4em; vertical-align: .02em;
+  background: currentColor; opacity: .8;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0c.6 5.6 4.4 9.4 10 10-5.6.6-9.4 4.4-10 10-.6-5.6-4.4-9.4-10-10C5.6 9.4 9.4 5.6 10 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0c.6 5.6 4.4 9.4 10 10-5.6.6-9.4 4.4-10 10-.6-5.6-4.4-9.4-10-10C5.6 9.4 9.4 5.6 10 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.papel .ph, .como .ph { color: var(--ouro-texto); background: rgba(122, 90, 20, .06); border-color: rgba(122, 90, 20, .32); }
 
 /* ---------- topo: barra de vidro, como a Apple faz ---------- */
 .topo {
@@ -94,6 +109,11 @@ h2 {
   height: var(--topo-h);
   display: flex; align-items: center; gap: 1.5rem;
   padding: 0 var(--gutter);
+  isolation: isolate;
+}
+/* o vidro mora num pseudo-elemento: backdrop-filter no próprio .topo prenderia o menu fixo dentro da barra */
+.topo::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
   background: rgba(3, 26, 19, .55);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
@@ -104,10 +124,10 @@ h2 {
   background: linear-gradient(rgba(3, 26, 19, .45), rgba(3, 26, 19, 0));
   opacity: 0; transition: opacity .3s var(--ease-out);
 }
-.topo.rolado { background: rgba(3, 26, 19, .72); }
+.topo.rolado::before { background: rgba(3, 26, 19, .82); }
 .topo.rolado::after { opacity: 1; }
 @media (prefers-reduced-transparency: reduce) {
-  .topo, .topo.rolado { background: var(--esm-950); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .topo::before, .topo.rolado::before { background: var(--esm-950); -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
 .marca { text-decoration: none; display: grid; line-height: 1.15; margin-right: auto; }
 .marca-nome { font-family: var(--display); font-size: 1.05rem; letter-spacing: .01em; color: var(--texto); }
@@ -124,10 +144,21 @@ h2 {
 }
 .pilula:active { transform: scale(.97); }
 @media (hover: hover) and (pointer: fine) { .pilula:hover { filter: brightness(1.06); } }
+
+/* um brilho atravessa o ouro no hover; volta sem animação, então nunca passa duas vezes */
+.botao-ouro { position: relative; overflow: hidden; isolation: isolate; }
+.botao-ouro::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  transform: translateX(-110%);
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, .55) 50%, transparent 70%);
+}
+@media (hover: hover) and (pointer: fine) {
+  .botao-ouro:hover::after { transform: translateX(110%); transition: transform 450ms var(--ease-out); }
+}
 .menu-botao { display: none; }
 
 /* ---------- abertura: cena presa à rolagem ---------- */
-.cena { position: relative; height: 240svh; background: var(--esm-900); }
+.cena { position: relative; height: 180svh; background: var(--esm-900); }
 .palco {
   position: sticky; top: 0; height: 100svh; overflow: clip;
   display: grid; justify-items: center;
@@ -136,9 +167,31 @@ h2 {
   position: absolute; left: 50%; top: 58%; width: max(70rem, 150vw); aspect-ratio: 1;
   translate: -50% -50%;
   background: repeating-conic-gradient(rgba(242, 220, 155, .3) 0deg .3deg, transparent .3deg 3deg);
-  -webkit-mask: radial-gradient(closest-side, #000 10%, rgba(0, 0, 0, .45) 38%, transparent 70%);
-  mask: radial-gradient(closest-side, #000 10%, rgba(0, 0, 0, .45) 38%, transparent 70%);
+  /* o ponto onde os raios convergem fica apagado: ali eles faziam moiré */
+  -webkit-mask: radial-gradient(closest-side, transparent 6%, #000 16%, rgba(0, 0, 0, .45) 40%, transparent 70%);
+  mask: radial-gradient(closest-side, transparent 6%, #000 16%, rgba(0, 0, 0, .45) 40%, transparent 70%);
   pointer-events: none;
+}
+/* o pé do palco se dissolve no verde: os raios nunca terminam numa linha reta */
+.palco::after {
+  content: ""; position: absolute; inset: auto 0 0; height: 32svh; pointer-events: none;
+  background: linear-gradient(rgba(6, 42, 32, 0), var(--esm-900));
+}
+
+/* Luz que se move: pontos de ouro sobem devagar. Único movimento que não depende da rolagem. */
+.poeira { position: absolute; inset: 0 0 -20svh; pointer-events: none; }
+.poeira i {
+  position: absolute; bottom: 0; width: var(--s); height: var(--s); border-radius: 50%;
+  background: radial-gradient(circle, #FFF7DC 0 30%, rgba(242, 220, 155, .55) 55%, rgba(242, 220, 155, 0) 72%);
+  opacity: 0;
+  animation: flutuar linear infinite;
+}
+.poeira .perto { filter: blur(1.5px); }
+.cena.fora .poeira i { animation-play-state: paused; }
+@keyframes flutuar {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  15%, 85% { opacity: var(--o); }
+  100% { transform: translate3d(var(--x), -125svh, 0); opacity: 0; }
 }
 .cena-texto {
   position: absolute; z-index: 2;
@@ -155,6 +208,11 @@ h2 {
   font-optical-sizing: auto;
 }
 .cena h1 .linha { display: block; }
+.cena h1 .linha, main section:not(.como) h2 .m > span {
+  background: var(--folha);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
 .lead {
   margin-top: clamp(1rem, 2.4svh, 1.6rem);
   max-width: 36rem;
@@ -211,10 +269,12 @@ h2 {
 /* o santinho */
 .cena-cartao {
   --cartao-l: min(20rem, 62vw, calc(56svh * 1100 / 1640));
-  position: absolute; z-index: 1; left: 50%; top: 50%;
+  position: absolute; z-index: 3; left: 50%; top: 50%;
   width: var(--cartao-l);
   display: grid; justify-items: center; gap: .9rem;
-  transform: translate(-50%, -50%);
+  /* em repouso o santinho espia do pé da tela; em tela baixa o JS o põe logo abaixo do texto, nunca sobre o botão */
+  --desce: max(30svh + var(--cartao-l) * .7455, var(--abaixo-do-texto, 0px));
+  transform: translate(-50%, calc(-50% + var(--desce))) scale(.86);
   perspective: 1600px;
 }
 .santinho-giro {
@@ -228,7 +288,7 @@ h2 {
 .santinho-giro.segurando { cursor: grabbing; scale: .985; }
 .santinho { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; -webkit-user-select: none; user-select: none; }
 .santinho img { -webkit-user-drag: none; pointer-events: none; }
-.face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; container-type: inline-size; }
 .verso { transform: rotateY(180deg); }
 
 .renda {
@@ -246,24 +306,31 @@ h2 {
   border: 1px solid rgba(140, 106, 34, .7);
   box-shadow: inset 0 0 0 3px var(--marfim), inset 0 0 0 4px rgba(140, 106, 34, .4);
 }
-.frente picture { flex: 1; min-height: 0; display: block; background: var(--marfim-2); }
+.frente picture { flex: 1; min-height: 0; display: block; background: var(--espera); }
+/* a luz que atravessa o papel quando o santinho gira */
+.santinho .papel { overflow: hidden; }
+.brilho {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0; transform: translateX(-120%);
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 250, 232, .6) 50%, transparent 62%);
+}
 .frente img { width: 100%; height: 100%; object-fit: cover; }
 .cartela {
   position: absolute; left: 50%; bottom: 1.1rem; translate: -50% 0;
-  white-space: nowrap; padding: .3rem 1.2rem;
+  white-space: nowrap; padding: .25em .9em;
   background: var(--marfim); border: 3px double var(--ouro-escuro);
-  font-family: var(--display); font-size: clamp(.95rem, .8rem + .4vw, 1.15rem); color: var(--tinta);
+  font-family: var(--display); font-size: clamp(.7rem, 6.5cqi, 1.15rem); color: var(--tinta);
 }
-.papel-verso { justify-content: center; align-items: center; text-align: center; gap: 1rem; padding: 2rem 1.4rem; }
-.verso-sol { width: 2.4rem; height: 2.4rem; color: var(--ouro-escuro); }
-.oracao { font-family: var(--display); font-size: clamp(1.1rem, .9rem + .7vw, 1.4rem); line-height: 1.35; letter-spacing: -0.01em; max-width: 16em; }
+/* o verso se mede pela largura da própria face (cqi): cabe em 320px e lado a lado no movimento reduzido */
+.papel-verso { justify-content: center; align-items: center; text-align: center; gap: clamp(.35rem, 4cqi, 1rem); padding: clamp(.8rem, 8cqi, 2rem) clamp(.6rem, 5cqi, 1.4rem); }
+.verso-sol { flex: none; width: clamp(1.2rem, 11cqi, 2.4rem); height: auto; aspect-ratio: 1; color: var(--ouro-escuro); }
+.oracao { font-family: var(--display); font-size: clamp(.72rem, 7.2cqi, 1.4rem); line-height: 1.32; letter-spacing: -0.01em; max-width: 16em; }
 .oracao::before, .oracao::after {
   content: ""; display: block; width: 4rem; height: 1px; margin: 0 auto;
   background: linear-gradient(90deg, transparent, var(--esm-700), transparent);
 }
-.oracao::before { margin-bottom: 1rem; }
-.oracao::after { margin-top: 1rem; }
-.oracao-assinatura { font-family: var(--display); font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--esm-700); }
+.oracao::before { margin-bottom: clamp(.35rem, 4cqi, 1rem); }
+.oracao::after { margin-top: clamp(.35rem, 4cqi, 1rem); }
+.oracao-assinatura { font-family: var(--display); font-size: clamp(.5rem, 4cqi, .85rem); letter-spacing: .06em; white-space: nowrap; text-transform: uppercase; color: var(--esm-700); }
 
 .cartao-controles { display: grid; justify-items: center; gap: .15rem; }
 .virar {
@@ -278,19 +345,6 @@ h2 {
 .dica { font-size: .8125rem; color: var(--texto-2); }
 
 
-/* entrada da abertura: as linhas do título materializam, uma depois da outra */
-@media (prefers-reduced-motion: no-preference) {
-  .cena h1 .linha, .lead, .agendar, .agendar-nota { animation: materializar 600ms var(--ease-out) both; }
-  .cena h1 .linha:nth-child(2) { animation-delay: 50ms; }
-  .lead { animation-delay: 100ms; }
-  .agendar { animation-delay: 150ms; }
-  .agendar-nota { animation-delay: 190ms; }
-  .cartao-controles { animation: acender 900ms 500ms var(--ease-out) both; }
-  .raios { animation: acender 1600ms var(--ease-out) both; }
-}
-@keyframes materializar { from { opacity: 0; translate: 0 .5em; filter: blur(8px); } }
-@keyframes acender { from { opacity: 0; } }
-
 /* ---------- sessões ---------- */
 section { position: relative; }
 .cabeca { max-width: 46rem; margin: 0 auto; text-align: center; }
@@ -299,26 +353,26 @@ section { position: relative; }
 .sessoes { padding: clamp(6rem, 13vw, 10rem) var(--gutter) clamp(4rem, 8vw, 7rem); background: var(--esm-900); }
 .leque {
   list-style: none; margin: clamp(3rem, 6vw, 5rem) auto 0; padding: 0;
-  display: flex; justify-content: center; align-items: flex-start;
+  display: flex; justify-content: center; align-items: stretch;
   gap: clamp(1rem, 2.6vw, 2.4rem);
   max-width: 74rem;
 }
-.carta { width: min(21rem, 100%); transition: transform .5s var(--ease-out); }
+.carta { display: flex; width: min(21rem, 100%); transition: transform 300ms var(--ease-out); }
 .carta-mesa { transform: rotate(-3deg) translateY(1.6rem); }
 .carta-dragoes { transform: translateY(-.4rem); z-index: 1; }
 .carta-harmonia { transform: rotate(3deg) translateY(1.6rem); }
 .carta:focus-within { transform: rotate(0) translateY(-.5rem); z-index: 2; }
 @media (hover: hover) and (pointer: fine) { .carta:hover { transform: rotate(0) translateY(-.5rem); z-index: 2; } }
-.carta .renda { height: auto; border-width: 16px; }
-.carta .papel { height: auto; padding: 1rem 1.1rem 1.35rem; text-align: center; gap: .65rem; }
-.carta-arte { width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; object-position: 50% 30%; background: var(--marfim-2); margin-bottom: .35rem; }
+.carta .renda { flex: 1; height: auto; border-width: 16px; }
+.carta .papel { height: 100%; padding: 1rem 1.1rem 1.35rem; text-align: center; gap: .65rem; }
+.carta-arte { width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; object-position: 50% 30%; background: var(--espera); margin-bottom: .35rem; }
 .carta h3 { font-size: 1.45rem; letter-spacing: -0.015em; color: var(--tinta); }
 .carta p { font-size: .975rem; line-height: 1.5; color: var(--tinta-2); }
-.carta-formato { font-size: .9rem; }
+.carta-formato { font-size: .9rem; margin-top: auto; }
 .carta-link {
   display: inline-flex; align-items: center; justify-content: center; gap: .2rem;
   margin-top: .2rem; padding: .3rem 0;
-  font-weight: 600; font-size: .975rem; color: var(--esm-700); text-decoration: none;
+  font-weight: 600; font-size: .975rem; color: var(--esm-700); text-decoration: none; white-space: nowrap;
   transition: transform 160ms var(--ease-out);
 }
 .carta-link svg { width: 1rem; height: 1rem; transition: transform 200ms var(--ease-out); }
@@ -330,7 +384,10 @@ section { position: relative; }
 .aviso-curto { margin-top: clamp(3rem, 6vw, 4.5rem); text-align: center; font-size: .875rem; color: var(--texto-2); }
 
 /* ---------- sobre ---------- */
-.sobre { padding: clamp(6rem, 13vw, 10rem) var(--gutter); background: var(--esm-950); overflow-x: clip; }
+.sobre {
+  padding: clamp(6rem, 13vw, 10rem) var(--gutter); overflow-x: clip;
+  background: linear-gradient(var(--esm-900), var(--esm-950) 12rem, var(--esm-950) calc(100% - 12rem), var(--esm-900));
+}
 .sobre-grade {
   display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
   align-items: center; gap: clamp(2.5rem, 6vw, 6rem);
@@ -345,11 +402,26 @@ section { position: relative; }
 }
 .medalhao-oval {
   position: relative; width: min(19rem, 78%); aspect-ratio: 3 / 4; border-radius: 50%;
-  display: grid; place-items: center; text-align: center; padding: 2rem;
-  background: var(--esm-800);
+  display: grid; place-content: center; justify-items: center; gap: 1rem; text-align: center; padding: 2rem;
+  background: radial-gradient(ellipse at 50% 32%, var(--esm-700) 0%, var(--esm-800) 55%, var(--esm-900) 100%);
   border: 1px solid var(--ouro);
   box-shadow: 0 0 0 6px var(--esm-950), 0 0 0 7px rgba(214, 178, 94, .5), 0 30px 60px -24px rgba(0, 0, 0, .8);
 }
+/* filete duplo por dentro, como num relicário */
+.medalhao-oval::before {
+  content: ""; position: absolute; inset: 12px; border-radius: 50%; pointer-events: none;
+  border: 1px solid rgba(214, 178, 94, .45);
+  box-shadow: inset 0 0 0 4px rgba(3, 26, 19, .55), inset 0 0 0 5px rgba(214, 178, 94, .22);
+}
+/* monograma em folha de ouro enquanto a foto não chega (não é retrato) */
+.monograma {
+  font-family: var(--display); font-weight: 600; font-size: clamp(3.4rem, 2rem + 4vw, 5.6rem); line-height: 1;
+  letter-spacing: -0.04em;
+  background: var(--folha); -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  filter: drop-shadow(0 2px 0 rgba(0, 0, 0, .35));
+}
+.medalhao-oval .ph { font-size: .75rem; }
 .sobre-texto { display: grid; gap: 1.1rem; max-width: 34rem; color: var(--texto-2); }
 .sobre-texto h2 { margin-bottom: .3rem; }
 .sobre-local { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem; }
@@ -362,7 +434,11 @@ section { position: relative; }
 
 /* ---------- dragões ---------- */
 .dragoes { text-align: center; padding: clamp(4rem, 9vw, 7rem) var(--gutter) clamp(6rem, 13vw, 10rem); background: var(--esm-900); }
-.guirlanda { display: block; width: min(60rem, 100%); margin: 0 auto clamp(2.5rem, 5vw, 3.5rem); }
+.guirlanda {
+  display: block; width: min(60rem, 100%); margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+  /* um halo rosado e dourado atrás das rosas: segura o lugar enquanto a arte chega */
+  background: radial-gradient(closest-side, rgba(242, 200, 170, .16), rgba(214, 178, 94, .08) 55%, rgba(214, 178, 94, 0));
+}
 .guirlanda img { width: 100%; height: auto; }
 .dragoes h2 { margin-bottom: clamp(1.5rem, 3vw, 2.2rem); }
 .dragoes-texto { max-width: 38rem; margin: 0 auto 1.2rem; font-size: clamp(1.06rem, .98rem + .3vw, 1.25rem); color: var(--texto-2); }
@@ -377,20 +453,27 @@ section { position: relative; }
 /* ---------- como funciona: a única seção clara, como uma página impressa ---------- */
 .como { background: var(--marfim); color: var(--tinta); padding: clamp(6rem, 13vw, 10rem) var(--gutter); }
 .como h2 { color: var(--tinta); text-align: center; }
+.como { transform-origin: 50% 0; margin-inline: clamp(.5rem, 2vw, 1.5rem); border-radius: clamp(20px, 3vw, 32px); }
 .passos {
+  position: relative;
   list-style: none; padding: 0; margin: clamp(3rem, 6vw, 4.5rem) auto 0; max-width: 74rem;
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2.75rem 1.5rem;
 }
-.passo {
-  display: grid; align-content: start; gap: .6rem;
-  padding: 2rem 1.6rem 2.2rem;
-  background: #FBF7EE;
-  border: 1px solid rgba(10, 58, 44, .1);
-  border-radius: 1.5rem;
+/* o fio de ouro que passa pelos números */
+.passos::before {
+  content: ""; position: absolute; left: 12.5%; right: 12.5%; top: 2.1rem; height: 1px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--ouro-escuro) 8% 92%, transparent);
 }
-.passo-num { font-family: var(--display); font-size: 3rem; line-height: 1; color: var(--ouro-texto); margin-bottom: .6rem; }
+.passo { display: grid; align-content: start; justify-items: center; gap: .6rem; padding: 0 .5rem; text-align: center; }
+.passo-num {
+  position: relative; display: grid; place-items: center;
+  width: 4.2rem; aspect-ratio: 1; margin-bottom: .7rem; border-radius: 50%;
+  background: var(--marfim); border: 1px solid var(--ouro-escuro);
+  box-shadow: 0 0 0 5px var(--marfim), 0 0 0 6px rgba(140, 106, 34, .35);
+  font-family: var(--display); font-size: 1.6rem; line-height: 1; color: var(--ouro-texto);
+}
 .passo h3 { font-size: 1.35rem; line-height: 1.2; letter-spacing: -0.015em; color: var(--tinta); }
-.passo p { color: var(--tinta-2); font-size: 1rem; }
+.passo p { color: var(--tinta-2); font-size: 1rem; max-width: 17rem; }
 
 /* ---------- perguntas ---------- */
 .perguntas { max-width: 52rem; margin: 0 auto; padding: clamp(6rem, 12vw, 9rem) var(--gutter); }
@@ -419,13 +502,24 @@ section { position: relative; }
 }
 .lista-perguntas details[open]::details-content { block-size: auto; }
 .lista-perguntas details p { padding: 0 0 1.4rem; color: var(--texto-2); max-width: 42rem; }
+/* a resposta chega em todo navegador (o Safari não anima a altura do details) */
+.lista-perguntas details[open] p { animation: resposta 300ms var(--ease-out) both; }
+@keyframes resposta { from { opacity: 0; translate: 0 -6px; } }
 .apoio { margin-top: 2.2rem; font-size: .9375rem; color: var(--texto-2); text-align: center; }
 
 /* ---------- contato ---------- */
 .contato {
   display: grid; justify-items: center; gap: 1.3rem; text-align: center;
   padding: clamp(6rem, 13vw, 10rem) var(--gutter);
-  background: var(--esm-950);
+  background: linear-gradient(var(--esm-900), var(--esm-950) 14rem);
+  isolation: isolate;
+  overflow-x: clip; /* a luz é mais larga que o celular */
+}
+/* uma poça de luz dourada atrás do convite final */
+.contato::before {
+  content: ""; position: absolute; z-index: -1; left: 50%; top: 32%; width: min(46rem, 130vw); aspect-ratio: 1;
+  translate: -50% -50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(214, 178, 94, .15), rgba(214, 178, 94, 0));
 }
 .contato-sol { width: 3rem; height: 3rem; color: var(--ouro); }
 .contato h2 { font-size: clamp(2.6rem, 1.4rem + 5vw, 5.6rem); }
@@ -461,6 +555,7 @@ section { position: relative; }
 /* ---------- telas menores ---------- */
 @media (max-width: 960px) {
   .passos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .passos::before { display: none; }
 }
 @media (max-width: 860px) {
   .menu-botao {
@@ -483,7 +578,8 @@ section { position: relative; }
     --origem: calc(100% - var(--gutter) - .7rem) calc(var(--topo-h) / 2);
     position: fixed; inset: 0; z-index: 21;
     display: grid; align-content: center; padding: 0 var(--gutter);
-    background: rgba(3, 26, 19, .96);
+    background: radial-gradient(120% 55% at 100% 0%, rgba(214, 178, 94, .14), rgba(214, 178, 94, 0) 60%),
+      radial-gradient(90% 50% at 0% 100%, rgba(15, 80, 64, .55), rgba(15, 80, 64, 0) 70%), var(--esm-950);
     clip-path: circle(0 at var(--origem)); visibility: hidden;
     transition: clip-path .3s var(--ease-in-out), visibility 0s .3s;
   }
@@ -503,6 +599,11 @@ section { position: relative; }
   .campo-select select { width: 100%; min-width: 0; }
   .botao-ouro { justify-content: space-between; }
 
+  .sobre-grade { grid-template-columns: 1fr; justify-items: center; }
+  .medalhao-oval { width: min(14rem, 60vw); }
+}
+@media (max-width: 1000px) {
+  /* abaixo de 1000px os três santinhos não cabem lado a lado: viram uma galeria */
   .leque {
     justify-content: flex-start; overflow-x: auto; scroll-snap-type: x mandatory;
     margin-inline: calc(var(--gutter) * -1); padding: 1rem var(--gutter) 2rem;
@@ -510,64 +611,136 @@ section { position: relative; }
   }
   .carta, .carta-mesa, .carta-dragoes, .carta-harmonia { flex: 0 0 min(19rem, 80vw); transform: none; scroll-snap-align: center; }
   .carta:focus-within { transform: none; }
-
-  .sobre-grade { grid-template-columns: 1fr; justify-items: center; }
-  .medalhao-oval { width: min(14rem, 60vw); }
 }
 @media (max-width: 560px) {
-  .passos { grid-template-columns: 1fr; }
+  /* no celular o fio desce pela esquerda e os passos se penduram nele */
+  .passos { grid-template-columns: 1fr; gap: 2rem; }
+  .passos::before { display: block; left: 2.1rem; right: auto; top: 2rem; bottom: 2rem; width: 1px; height: auto;
+    background: linear-gradient(transparent, var(--ouro-escuro) 6% 94%, transparent); }
+  .passo { grid-template-columns: 4.2rem minmax(0, 1fr); column-gap: 1.2rem; row-gap: .35rem; justify-items: start; text-align: left; padding: 0; }
+  .passo-num { grid-row: span 2; margin: 0; }
+  .elementos { display: grid; grid-template-columns: repeat(2, max-content); justify-content: center; }
   .marca-titulo { display: none; }
   .cena h1 .linha { display: inline; }
 }
 
-/* ---------- movimento ligado à rolagem (onde o navegador suporta) ---------- */
+/* ---------- revelar ao entrar: funciona em todo navegador ----------
+   O JS põe .anima no <html> e .in em cada alvo quando ele chega a 20% abaixo da tela.
+   Duração curta e começo antecipado: quando a pessoa rola até ali, já está pronto.
+   Sem JS (ou com movimento reduzido) nada fica escondido. */
+.m { display: inline-block; padding-bottom: .22em; margin-bottom: -.22em; clip-path: inset(-1em -.2em 0 -.2em); }
+.m > span { display: inline-block; }
+.frase .ouro { color: var(--ouro-claro); }
+
+.anima [data-r=""], .anima [data-r="grupo"] > *, .anima main h2 .m > span {
+  transition: opacity var(--revela) var(--ease-out), translate var(--revela) var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 35ms);
+}
+.anima [data-r=""]:not(.in), .anima [data-r="grupo"]:not(.in) > * { opacity: 0; translate: 0 14px; }
+/* títulos: cada palavra sobe de dentro de uma máscara (sem desfoque: o ouro recortado no texto falha com filter no Safari) */
+.anima main h2:not(.in) .m > span { opacity: 0; translate: 0 min(.4em, 16px); }
+/* o botão grande guarda a resposta ao toque sem atraso */
+.anima .botao-grande {
+  transition: opacity var(--revela) var(--ease-out) calc(var(--i, 0) * 35ms), translate var(--revela) var(--ease-out) calc(var(--i, 0) * 35ms),
+    transform 160ms var(--ease-out), filter .2s ease;
+}
+
+/* medalhão: o oval se assenta e os raios acendem */
+.anima .medalhao-oval { transition: opacity var(--revela) var(--ease-out), scale var(--revela) var(--ease-out); }
+.anima .medalhao::before { transition: opacity var(--revela) var(--ease-out); }
+.anima .medalhao:not(.in) .medalhao-oval { opacity: 0; scale: .94; }
+.anima .medalhao:not(.in)::before { opacity: 0; }
+
+/* elementos: as estrelas giram para o lugar */
+.anima .elementos svg { transition: rotate var(--revela) var(--ease-out), scale var(--revela) var(--ease-out); transition-delay: calc(var(--i, 0) * 35ms); }
+.anima .elementos:not(.in) svg { rotate: -90deg; scale: .6; }
+
+/* como funciona: o fio de ouro se desenha pelos números */
+.anima .passos::before { transition: clip-path 400ms var(--ease-out); }
+.anima .passos:not(.in)::before { clip-path: inset(0 100% 0 0); }
+
+/* contato: o sol sobe girando para o lugar */
+.anima .contato-sol { transition: opacity var(--revela) var(--ease-out), translate var(--revela) var(--ease-out), rotate var(--revela) var(--ease-out), scale var(--revela) var(--ease-out); }
+.anima .contato-sol:not(.in) { opacity: 0; translate: 0 14px; rotate: -90deg; scale: .6; }
+
+@media (max-width: 1000px) {
+  /* a galeria entra pela direita: diz que dá para deslizar */
+  .anima .leque > .carta {
+    transition: opacity var(--revela) var(--ease-out) calc(var(--i, 0) * 35ms), translate var(--revela) var(--ease-out) calc(var(--i, 0) * 35ms),
+      transform 300ms var(--ease-out);
+  }
+  .anima .leque:not(.in) > .carta { opacity: 0; translate: 16px 0; }
+}
+@media (max-width: 560px) {
+  .anima .passos:not(.in)::before { clip-path: inset(0 0 100% 0); }
+}
+
+/* ---------- movimento ligado à rolagem ----------
+   Onde há animation-timeline, o CSS faz tudo. Onde não há (iPhone antes do iOS 26, Firefox, ou ?fallback),
+   o JS marca html.sem-timeline e escreve os mesmos valores a cada quadro. Tudo termina cedo:
+   a frase está acesa no meio da tela, o painel claro está inteiro quando o topo dele chega ao meio. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    /* os raios do resplendor giram com a rolagem, nunca sozinhos */
-    .raios { animation: acender 1600ms var(--ease-out) both, girar linear both; animation-timeline: auto, scroll(root); }
-    .medalhao::before { animation: girar linear both; animation-timeline: view(); }
-    /* a guirlanda se desenrola do centro */
-    .guirlanda img { animation: desenrolar linear backwards; animation-timeline: view(); animation-range: entry 10% cover 40%; }
-    /* a frase acende palavra por palavra enquanto se lê */
-    .frase .palavra { opacity: .2; animation: acender-palavra linear both; animation-timeline: view(); animation-range: cover 28% cover 48%; }
-    /* os passos sobem um depois do outro */
-    .passo { animation: subir linear backwards; animation-timeline: view(); }
-    .passo:nth-child(1) { animation-range: entry 0% cover 28%; }
-    .passo:nth-child(2) { animation-range: entry 6% cover 32%; }
-    .passo:nth-child(3) { animation-range: entry 12% cover 36%; }
-    .passo:nth-child(4) { animation-range: entry 18% cover 40%; }
-    /* títulos de seção assentam com um leve desfoque que some */
-    .cabeca h2, .dragoes h2, .como h2, .perguntas h2, .contato h2 { animation: assentar linear backwards; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+    /* os raios do resplendor giram com a cena, nunca sozinhos */
+    html:not(.sem-timeline) .cena { view-timeline: --cena block; }
+    html:not(.sem-timeline) .raios { animation: girar linear both; animation-timeline: --cena; animation-range: contain 0% contain 100%; }
+    html:not(.sem-timeline) .medalhao::before { animation: girar linear both; animation-timeline: view(); }
+    /* a guirlanda se desenrola do centro enquanto entra */
+    html:not(.sem-timeline) .guirlanda img { animation: desenrolar linear backwards; animation-timeline: view(); animation-range: entry 0% entry 100%; }
+    /* a frase acende palavra por palavra, em ordem de leitura */
+    html:not(.sem-timeline) .frase { view-timeline: --frase block; }
+    html:not(.sem-timeline) .frase .palavra {
+      animation: acender-palavra linear both; animation-timeline: --frase;
+      animation-range: cover calc(var(--i) / var(--n) * 30%) cover calc(var(--i) / var(--n) * 30% + 12%);
+    }
+    /* a página clara chega como um painel da Apple */
+    html:not(.sem-timeline) .como { animation: painel linear backwards; animation-timeline: view(); animation-range: entry 0% entry 50%; }
   }
-  @media (prefers-reduced-motion: no-preference) and (min-width: 861px) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 1001px) {
     /* os santinhos saem de um monte só e abrem em leque */
-    .leque { view-timeline: --leque block; }
-    .carta-mesa, .carta-dragoes, .carta-harmonia { animation: linear backwards; animation-timeline: --leque; animation-range: entry 5% cover 42%; }
-    .carta-mesa { animation-name: leque-esq; }
-    .carta-dragoes { animation-name: leque-meio; }
-    .carta-harmonia { animation-name: leque-dir; }
+    html:not(.sem-timeline) .leque { view-timeline: --leque block; }
+    html:not(.sem-timeline) .carta { animation: linear backwards; animation-timeline: --leque; animation-range: entry 0% entry 80%; }
+    html:not(.sem-timeline) .carta-mesa { animation-name: leque-esq; }
+    html:not(.sem-timeline) .carta-dragoes { animation-name: leque-meio; }
+    html:not(.sem-timeline) .carta-harmonia { animation-name: leque-dir; }
   }
-}
-@supports (animation-timeline: view(inline)) {
-  @media (prefers-reduced-motion: no-preference) and (max-width: 860px) {
+  @media (prefers-reduced-motion: no-preference) and (max-width: 1000px) {
     /* no celular, o cartão do centro da galeria fica em foco */
-    .carta { animation: foco linear both; animation-timeline: view(inline); }
+    html:not(.sem-timeline) .carta > .renda { animation: foco linear both; animation-timeline: view(inline); }
   }
 }
-@keyframes girar { to { rotate: 40deg; } }
-@keyframes desenrolar { from { clip-path: inset(0 50% 0 50%); opacity: .4; } }
-@keyframes acender-palavra { to { opacity: 1; } }
-@keyframes subir { from { opacity: 0; transform: translateY(2.5rem) scale(.97); } }
-@keyframes assentar { from { opacity: 0; filter: blur(6px); transform: translateY(1rem); } }
-@keyframes leque-esq { from { transform: translateX(104%) rotate(0deg) scale(.94); } }
-@keyframes leque-meio { from { transform: translateY(2.5rem) scale(.96); } }
-@keyframes leque-dir { from { transform: translateX(-104%) rotate(0deg) scale(.94); } }
-@keyframes foco { 0%, 100% { transform: scale(.92); opacity: .6; } 50% { transform: scale(1); opacity: 1; } }
+@keyframes girar { to { rotate: 30deg; } }
+@keyframes desenrolar { from { clip-path: inset(0 50%); opacity: .4; } to { clip-path: inset(0); opacity: 1; } }
+@keyframes acender-palavra { from { opacity: .4; } }
+@keyframes aparecer { from { opacity: 0; } }
+@keyframes painel { from { scale: .92; } }
+@keyframes leque-esq { from { translate: 104% 0; scale: .94; rotate: 3deg; } }
+@keyframes leque-meio { from { translate: 0 2.5rem; scale: .96; } }
+@keyframes leque-dir { from { translate: -104% 0; scale: .94; rotate: -3deg; } }
+@keyframes foco { 0%, 100% { scale: .94; opacity: .82; } 50% { scale: 1; opacity: 1; } }
 
-/* ---------- movimento reduzido: tudo parado, nada escondido ---------- */
+/* o ponto de partida do caminho em JS, para o primeiro quadro já estar certo */
+@media (prefers-reduced-motion: no-preference) {
+  .sem-timeline .frase .palavra { opacity: .4; }
+  .sem-timeline .medalhao::before { rotate: var(--giro, 0deg); }
+  .sem-timeline .guirlanda img { clip-path: inset(0 50%); opacity: .4; }
+  .sem-timeline .como { scale: .92; will-change: scale; }
+}
+@media (prefers-reduced-motion: no-preference) and (min-width: 1001px) {
+  .sem-timeline .carta-mesa { translate: 104% 0; scale: .94; rotate: 3deg; }
+  .sem-timeline .carta-dragoes { translate: 0 2.5rem; scale: .96; }
+  .sem-timeline .carta-harmonia { translate: -104% 0; scale: .94; rotate: -3deg; }
+}
+
+/* ---------- movimento reduzido: nada se desloca, só a opacidade muda ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-property: opacity, color, background-color, border-color !important; }
+  .anima [data-r=""], .anima [data-r="grupo"] > *, .anima main h2 .m > span, .anima .medalhao-oval, .anima .contato-sol, .anima .leque > .carta, .anima .elementos svg {
+    translate: none !important; scale: none !important; rotate: none !important;
+    transition: opacity 200ms var(--ease-out) !important;
+  }
+  .lista-perguntas details[open] p { animation: aparecer 200ms var(--ease-out) both !important; }
   .cena { height: auto; }
   .palco { position: relative; height: auto; gap: 3rem; padding: calc(var(--topo-h) + 3rem) var(--gutter) 4rem; }
   .cena-texto, .cena-cartao { position: relative; top: auto; left: auto; transform: none !important; opacity: 1 !important; filter: none !important; }
@@ -578,4 +751,10 @@ section { position: relative; }
   .face { position: relative; inset: auto; aspect-ratio: 1100 / 1640; backface-visibility: visible; -webkit-backface-visibility: visible; }
   .verso { transform: none; }
   .virar, .dica { display: none; }
+  .poeira, .brilho { display: none; }
+}
+@media (prefers-reduced-motion: reduce) and (max-width: 400px) {
+  /* lado a lado o verso não cabe numa tela estreita: uma face embaixo da outra */
+  .cena-cartao { width: min(17rem, 100%); }
+  .santinho { grid-template-columns: 1fr; }
 }

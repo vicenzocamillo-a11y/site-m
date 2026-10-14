@@ -4,7 +4,7 @@ Site de uma página para agendar atendimentos pelo WhatsApp. HTML, CSS e JS puro
 
 O conceito visual é o **Santinho de Luz**: o site é um santinho brasileiro (o cartãozinho devocional de renda de papel) cuja figura é um Dragão de Luz dourado, sobre verde esmeralda e dourado. A abertura fica presa enquanto a pessoa rola: o título se desfaz, o santinho sobe até o centro e vira, mostrando o verso escrito como uma oração. Dá também para arrastar o cartão com o dedo ou virar pelo botão.
 
-Movimento no estilo Apple: menu de vidro, molas que herdam a velocidade do dedo, e transições ligadas à rolagem (raios girando, guirlanda que se desenrola, frase que acende palavra por palavra, passos que sobem, cartões que se abrem em leque). Quem pede menos movimento no sistema vê tudo parado.
+Movimento no estilo Apple, rápido e em todo navegador (inclusive iPhone): menu de vidro, molas que herdam a velocidade do dedo, pontos de luz dourada na abertura, títulos que sobem palavra por palavra e conteúdo que aparece um pouco antes de chegar à tela, mais transições ligadas à rolagem (raios girando, guirlanda que se desenrola, frase que acende palavra por palavra, a página clara que chega como um painel, cartões que se abrem em leque). Nada na primeira tela espera para aparecer. Quem pede menos movimento no sistema vê tudo parado. Para testar o caminho em JS (o que o iPhone antigo e o Firefox usam) no Chrome, abra o site com `?fallback` no fim do endereço.
 
 ## Ver no computador
 
@@ -17,7 +17,7 @@ Abrir o `index.html` direto com dois cliques também funciona, mas as fontes só
 
 ## O que falta preencher
 
-Tudo o que aparece no site entre `[[ ]]` com contorno tracejado dourado é informação que não encontrei publicamente e precisa vir da Anelise:
+Tudo o que aparece no site entre `[[ ]]` numa etiqueta dourada com estrelinha é informação que não encontrei publicamente e precisa vir da Anelise:
 
 | O quê | Onde |
 |---|---|

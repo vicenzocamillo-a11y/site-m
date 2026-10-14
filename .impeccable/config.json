@@ -30,6 +30,15 @@
         ],
         "createdAt": "2026-10-14T16:36:00.000Z",
         "reason": "Claude triage: flagged elements are Bodoni Moda display headings only (h1 lines 1.02, h2 1.04, h3 1.2), checked in the browser; body text is 1.5-1.55"
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-14T20:50:00.000Z",
+        "reason": "Claude triage: the flagged radial-gradient is the dot shape of the 2-7px gold light motes (.poeira i), not a page-level halo"
       }
     ]
   }
