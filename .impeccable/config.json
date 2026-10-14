@@ -1,3 +1,18 @@
 {
-  "buildPath": "comp"
+  "buildPath": "comp",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-14T13:36:58.438Z",
+        "reason": "Claude triage: the three flagged containers (.papel/.contato-papel, section.dragoes, .como-papel) all have 9px to 4rem padding set with clamp()/var(); detector reports them flush because it does not resolve clamp()/var() padding"
+      }
+    ]
+  }
 }
