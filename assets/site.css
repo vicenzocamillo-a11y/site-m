@@ -147,7 +147,7 @@ a { color: inherit; }
   line-height: .98;
   letter-spacing: .005em;
   color: var(--ouro-claro);
-  text-shadow: 0 2px 0 rgba(4, 10, 40, .35), 0 0 60px rgba(240, 213, 143, .18);
+  text-shadow: 0 2px 0 rgba(4, 10, 40, .35);
 }
 .abertura-lead {
   margin-top: clamp(1.2rem, 2.4vw, 1.8rem);
@@ -381,6 +381,7 @@ h2 {
   -webkit-mask: radial-gradient(closest-side, #000 40%, transparent 100%);
   mask: radial-gradient(closest-side, #000 40%, transparent 100%);
 }
+.medalhao-oval .ph { color: #F4C3C7; }
 .medalhao-oval {
   position: relative;
   width: min(20rem, 80%); aspect-ratio: 3 / 4; border-radius: 50%;
@@ -398,7 +399,7 @@ h2 {
 .dragoes {
   text-align: center;
   padding: clamp(3.5rem, 8vw, 6rem) var(--gutter) clamp(5rem, 11vw, 9rem);
-  background: radial-gradient(50rem 30rem at 50% 60%, rgba(26, 47, 134, .9), transparent 70%), var(--manto-fundo);
+  background: var(--manto-fundo);
 }
 .guirlanda { display: block; width: min(60rem, 100%); margin: 0 auto clamp(2.5rem, 5vw, 3.5rem); }
 .guirlanda img { width: 100%; height: auto; }
@@ -419,6 +420,7 @@ h2 {
   border: 22px solid transparent;
   border-image: url("renda.svg") 16 fill round;
   filter: drop-shadow(0 30px 40px rgba(2, 6, 30, .55));
+  background: var(--papel) padding-box;
   color: var(--tinta);
   padding: clamp(2rem, 5vw, 3.8rem) clamp(1.4rem, 5vw, 4rem);
   position: relative;
@@ -558,7 +560,8 @@ h2 {
   .carta:hover, .carta:focus-within { transform: none; }
 
   .sobre { grid-template-columns: 1fr; }
-  .medalhao-oval { width: min(15rem, 62vw); }
+  .medalhao-oval .ph { color: #F4C3C7; }
+.medalhao-oval { width: min(15rem, 62vw); }
   .passos { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
