@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-14T17:00:00Z",
+  "generatedAt": "2026-10-14T21:30:00Z",
   "title": "Design System: Anelise Werle Camillo, Terapeuta Quântica",
   "extensions": {
     "colorMeta": {
@@ -199,21 +199,6 @@
           "#F8EED7"
         ]
       },
-      "marfim-passo": {
-        "role": "neutral",
-        "displayName": "Step Paper",
-        "canonical": "#FBF7EE",
-        "tonalRamp": [
-          "#0D0B06",
-          "#27241D",
-          "#433F38",
-          "#615D56",
-          "#807D75",
-          "#A29E96",
-          "#C8C4BB",
-          "#F2EEE5"
-        ]
-      },
       "texto": {
         "role": "neutral",
         "displayName": "Milk",
@@ -364,20 +349,15 @@
         "displayName": "Material: poco-icone",
         "canonical": "rgba(10, 58, 44, 0.12)"
       },
-      "borda-passo": {
-        "role": "neutral",
-        "displayName": "Material: borda-passo",
-        "canonical": "rgba(10, 58, 44, 0.1)"
-      },
       "marca-ph": {
         "role": "neutral",
         "displayName": "Material: marca-ph",
-        "canonical": "rgba(242, 220, 155, 0.1)"
+        "canonical": "rgba(242, 220, 155, 0.07)"
       },
       "marca-ph-papel": {
         "role": "neutral",
         "displayName": "Material: marca-ph-papel",
-        "canonical": "rgba(122, 90, 20, 0.08)"
+        "canonical": "rgba(122, 90, 20, 0.06)"
       },
       "mascara": {
         "role": "neutral",
@@ -389,6 +369,66 @@
         "role": "neutral",
         "displayName": "Material: mascara-meia",
         "canonical": "rgba(0, 0, 0, 0.45)"
+      },
+      "folha-luz": {
+        "role": "secondary",
+        "displayName": "Gold Leaf Light",
+        "canonical": "#FBEBC0"
+      },
+      "folha-ouro": {
+        "role": "secondary",
+        "displayName": "Gold Leaf",
+        "canonical": "#EBCB7C"
+      },
+      "folha-sombra": {
+        "role": "secondary",
+        "displayName": "Gold Leaf Shade",
+        "canonical": "#C29A47"
+      },
+      "poeira": {
+        "role": "secondary",
+        "displayName": "Mote Light",
+        "canonical": "#FFF7DC"
+      },
+      "espera-luz": {
+        "role": "neutral",
+        "displayName": "Material: warm wait glow",
+        "canonical": "rgba(255, 240, 200, 0.95)"
+      },
+      "espera-pele": {
+        "role": "neutral",
+        "displayName": "Warm Wait Skin",
+        "canonical": "#F6D9C8"
+      },
+      "espera-rosa": {
+        "role": "neutral",
+        "displayName": "Warm Wait Rose",
+        "canonical": "#EDBFAA"
+      },
+      "espera-terra": {
+        "role": "neutral",
+        "displayName": "Warm Wait Clay",
+        "canonical": "#E4AE97"
+      },
+      "halo-rosa": {
+        "role": "neutral",
+        "displayName": "Material: rose halo",
+        "canonical": "rgba(242, 200, 170, 0.16)"
+      },
+      "marca-ph-borda": {
+        "role": "neutral",
+        "displayName": "Material: marca-ph-borda",
+        "canonical": "rgba(214, 178, 94, 0.42)"
+      },
+      "marca-ph-papel-borda": {
+        "role": "neutral",
+        "displayName": "Material: marca-ph-papel-borda",
+        "canonical": "rgba(122, 90, 20, 0.32)"
+      },
+      "brilho-papel": {
+        "role": "neutral",
+        "displayName": "Material: paper sheen",
+        "canonical": "rgba(255, 250, 232, 0.6)"
       }
     },
     "typographyMeta": {
@@ -414,7 +454,7 @@
       },
       "numeral": {
         "displayName": "Numeral",
-        "purpose": "Roman step numerals."
+        "purpose": "Roman step numerals inside the 4.2rem ivory coins."
       },
       "title": {
         "displayName": "Title",
@@ -495,6 +535,10 @@
       "micro": {
         "displayName": "Micro",
         "purpose": "Wordmark subtitle."
+      },
+      "monograma": {
+        "displayName": "Monograma",
+        "purpose": "Gold-leaf AWC monogram in the empty portrait medallion."
       }
     },
     "shadows": [
@@ -546,14 +590,19 @@
         "purpose": "Active state of every pressable."
       },
       {
-        "name": "materializar",
-        "value": "900ms ease-out, 80ms stagger, from blur(8px) and 0.5em down",
-        "purpose": "Hero entry."
+        "name": "first-paint",
+        "value": "no hero intro; setup after requestAnimationFrame + setTimeout",
+        "purpose": "Headline, lead and booking paint complete on the first frame."
+      },
+      {
+        "name": "revela",
+        "value": "300ms ease-out, IntersectionObserver rootMargin 100% (one screen ahead), 35ms stagger capped at 4, rise 14px",
+        "purpose": "Reveals in every browser; targets within two screens at setup show with no transition."
       },
       {
         "name": "scene",
-        "value": "240svh pinned; text out 0-0.28, card rise 0-0.34, turn 0.4-0.78 (-12deg to 180deg), ease-out cubic",
-        "purpose": "Scroll-scrubbed hero in site.js."
+        "value": "180svh pinned; text out 0-0.22, card rise 0-0.45 (scale 0.86 to 1), turn 0.42-0.80 (-12deg to 180deg), ease-out cubic, requestAnimationFrame",
+        "purpose": "Scroll-scrubbed hero in site.js; scroll listener attached only while the scene intersects."
       },
       {
         "name": "spring-flip",
@@ -572,13 +621,18 @@
       },
       {
         "name": "details",
-        "value": "block-size 0.3s ease-out via ::details-content",
+        "value": "block-size 0.3s ease-out via ::details-content; answer fades and drops 6px in 300ms",
         "purpose": "FAQ answers."
       },
       {
-        "name": "scroll-driven",
-        "value": "@supports (animation-timeline: view())",
-        "purpose": "Rays rotate 40deg, garland unrolls, phrase word by word, steps rise, headings settle from 6px blur, desktop card fan, mobile rail focus."
+        "name": "scroll-linked",
+        "value": "CSS view timelines under @supports (animation-timeline: view()) and html:not(.sem-timeline); else html.sem-timeline + one rAF-batched scroll listener (forced by ?fallback)",
+        "purpose": "Rays rotate 30deg, medallion rays turn, garland unrolls, manifesto lights word by word, ivory panel scales 0.92 to 1, desktop card fan, mobile rail focus."
+      },
+      {
+        "name": "motes",
+        "value": "12 (<700px) or 20 gold motes, linear infinite 14-32s, rise 125svh, paused off screen",
+        "purpose": "The single ambient loop."
       }
     ],
     "breakpoints": [
@@ -638,12 +692,12 @@
       "css": ".ds-carta { width: 18rem; filter: drop-shadow(0 30px 40px rgba(0,8,5,.55)); transition: transform .5s cubic-bezier(0.23,1,0.32,1); } .ds-carta:hover { transform: translateY(-.5rem); } .ds-papel { display: grid; gap: .65rem; text-align: center; padding: 1rem 1.1rem 1.35rem; background: #F5EEDF; color: #0A3A2C; border: 1px solid rgba(140,106,34,.7); box-shadow: inset 0 0 0 3px #F5EEDF, inset 0 0 0 4px rgba(140,106,34,.4); } .ds-papel h3 { margin: 0; font: 500 1.45rem 'Bodoni Moda', Didot, Georgia, serif; letter-spacing: -0.015em; } .ds-papel p { margin: 0; font: .975rem/1.5 system-ui, sans-serif; color: #2F5A4C; } .ds-papel a { font: 600 .975rem system-ui, sans-serif; color: #0F5040; text-decoration: none; } .ds-papel a:hover { text-decoration: underline; text-underline-offset: .25em; } .ds-papel a:focus-visible { outline: 2px solid #0A3A2C; outline-offset: 3px; }"
     },
     {
-      "name": "Step Card",
-      "kind": "card",
-      "refersTo": "passo",
-      "description": "Rounded step on the ivory page with roman numeral.",
+      "name": "Step Numeral",
+      "kind": "custom",
+      "refersTo": "passo-num",
+      "description": "Roman numeral in an ivory coin on the gold thread of the ivory page.",
       "html": "<div class=\"ds-passo\"><span>I</span><h3>Você me chama no WhatsApp</h3><p>Conte, do seu jeito, o que está vivendo.</p></div>",
-      "css": ".ds-passo { display: grid; gap: .6rem; width: 15rem; padding: 2rem 1.6rem 2.2rem; background: #FBF7EE; border: 1px solid rgba(10,58,44,.1); border-radius: 1.5rem; color: #0A3A2C; } .ds-passo span { font: 3rem/1 'Bodoni Moda', Didot, Georgia, serif; color: #7A5A14; } .ds-passo h3 { margin: 0; font: 500 1.35rem/1.2 'Bodoni Moda', Didot, Georgia, serif; letter-spacing: -0.015em; } .ds-passo p { margin: 0; font: 1rem/1.55 system-ui, sans-serif; color: #2F5A4C; }"
+      "css": ".ds-passo { display: grid; justify-items: center; gap: .6rem; width: 15rem; padding: 1rem; text-align: center; background: #F5EEDF; color: #0A3A2C; } .ds-passo span { display: grid; place-items: center; width: 4.2rem; aspect-ratio: 1; margin-bottom: .7rem; border-radius: 50%; background: #F5EEDF; border: 1px solid #8C6A22; box-shadow: 0 0 0 5px #F5EEDF, 0 0 0 6px rgba(140, 106, 34, .35); font: 1.6rem/1 'Bodoni Moda', Didot, Georgia, serif; color: #7A5A14; } .ds-passo h3 { margin: 0; font: 500 1.35rem/1.2 'Bodoni Moda', Didot, Georgia, serif; letter-spacing: -0.015em; } .ds-passo p { margin: 0; font: 1rem/1.55 system-ui, sans-serif; color: #2F5A4C; }"
     },
     {
       "name": "Sunburst",
@@ -664,13 +718,13 @@
   ],
   "narrative": {
     "northStar": "Santinho de Luz",
-    "overview": "The whole site is a Brazilian santinho, the devotional holy card kept in a wallet, laid on a deep emerald ground and lit by gold. The ground is the page; the one object you hold up close is the hero santinho: cream card stock inside a die-cut lace edge, a Dragão de Luz on the front, a short prayer on the back. Gold is the resplendor: the sunburst rays behind the card and the portrait, the filetes around paper, the one pill-shaped action. The only fully light section, \"Como funciona\", is a printed ivory page. Ornaments are suns and four-point stars, never crosses.\n\nThe materials and motion are Apple-grade. The header is a sheet of frosted glass that densifies once the page leaves the top. The opening is a pinned scene: the stage stays put for 240svh of scroll while the title dissolves, the santinho rises to centre and turns over. The card can also be grabbed and flipped by hand, tracking the finger 1:1 and settling on a spring. Everything else is scroll-driven CSS: rays turn, the garland unrolls, the manifesto lights word by word, steps rise, headings settle out of a blur, the session cards fan out of a single pile. Density is low and ceremonial; Didone headings carry the devotion, the system UI face carries everything read.\n\nThe site explicitly refuses the category default of a lilac galaxy hero over a row of identical service cards.",
+    "overview": "The whole site is a Brazilian santinho, the devotional holy card kept in a wallet, laid on a deep emerald ground and lit by gold. The ground is the page; the one object you hold up close is the hero santinho: cream card stock inside a die-cut lace edge, a Dragão de Luz on the front, a short prayer on the back. Gold is the resplendor: the sunburst rays behind the card and the portrait, the filetes around paper, the one pill-shaped action. The only fully light section, \"Como funciona\", is a printed ivory page. Ornaments are suns and four-point stars, never crosses.\n\nThe materials and motion are Apple-grade. The header is a sheet of frosted glass that densifies once the page leaves the top. The opening is a pinned scene that paints complete on the first frame (no intro): the stage stays put for 180svh of scroll while the title dissolves, the santinho rises to centre and turns over (the turn completes at 80% of the scene), with gold motes drifting up behind it and a sheen crossing the paper as it turns. The card can also be grabbed and flipped by hand, tracking the finger 1:1 and settling on a spring. Everything else either reveals just before it is seen (headings rise word by word out of a mask, copy and lists follow in a short stagger) or follows the scroll (rays turn, the garland unrolls, the manifesto lights word by word, the ivory page opens like a panel, the session cards fan out of a single pile). Density is low and ceremonial; Didone headings carry the devotion, the system UI face carries everything read.\n\nThe site explicitly refuses the category default of a lilac galaxy hero over a row of identical service cards.",
     "keyCharacteristics": [
       "Emerald ground in three depths (`esm-950`, `esm-900`, `esm-800`); ivory only on card stock and the \"Como funciona\" page.",
       "Gold for rays, filetes, headings on emerald and the single primary action.",
       "Bodoni Moda for display, headings, names and the prayer; the system UI stack (SF Pro Text on Apple devices) for everything read and every control.",
       "Ornament vocabulary: four-point star, eight-ray sun, scalloped lace, double filete, repeating-conic sunburst.",
-      "Motion: a pinned, scroll-scrubbed hero scene with a spring-driven card flip; scroll-linked CSS animations elsewhere; two curves only."
+      "Motion: a pinned, scroll-scrubbed hero scene with a spring-driven card flip; fast reveals and scroll-linked effects elsewhere that work in every browser; two curves only."
     ],
     "rules": [
       {
@@ -705,7 +759,7 @@
       "Do set names, headings and devotions in Bodoni Moda and everything read or pressed in the system UI stack.",
       "Do use the four-point star, the sun, the lace edge and the conic sunburst as the ornament set.",
       "Do ease on `cubic-bezier(0.23, 1, 0.32, 1)`, scale pressables to 0.97, and gate hover effects to `(hover: hover) and (pointer: fine)`.",
-      "Do put scroll-linked effects behind `@supports (animation-timeline: ...)` and `prefers-reduced-motion: no-preference`, and give every translucent surface a reduced-transparency fallback.",
+      "Do give every scroll-linked effect both paths: CSS under `@supports (animation-timeline: ...)` prefixed with `html:not(.sem-timeline)`, and the same values from the JS fallback; keep both under `prefers-reduced-motion: no-preference`, and give every translucent surface a reduced-transparency fallback.",
       "Do swap to `ouro-escuro`, `ouro-texto` and `esm-700` when gold or emerald sits on ivory."
     ],
     "donts": [
@@ -714,7 +768,8 @@
       "Don't swap the emerald ground for another hue or add a third accent ink.",
       "Don't add a third type family or set Bodoni body copy.",
       "Don't use hard offset shadows or glows; depth is glass and lifted paper.",
-      "Don't animate on a timer what the scroll or the hand can drive; the rays never spin on their own."
+      "Don't animate on a timer what the scroll or the hand can drive; the rays never spin on their own. The hero motes are the one ambient exception.",
+      "Don't make anything wait: no load intro above the fold, reveals finish before they are seen."
     ]
   }
 }
