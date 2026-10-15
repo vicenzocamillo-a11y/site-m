@@ -428,7 +428,7 @@ A 1100:1640 lace card with two faces. Front: Dragão de Luz art with the cartouc
 ### FAQ
 Native `details` between `filete` hairlines; question in `question` weight 600 `texto`, a gold chevron rotating from 45deg to 225deg; the answer height animates through `::details-content` (0.3s ease-out, `interpolate-size: allow-keywords`).
 
-### Floating WhatsApp
+### Floating booking button (Instagram)
 A 3.5rem gilt circle bottom-right (safe-area aware); hidden and inert while the hero booking is in view, then rises 1rem and fades in (0.25s ease-out).
 
 ### Placeholder mark

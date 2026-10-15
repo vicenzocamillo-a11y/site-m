@@ -25,12 +25,13 @@ Her own public vocabulary (Instagram posts signed "Anelise Werle Camillo Terapeu
 ## Operating Context
 
 - Sessions are typically online (video call or at a distance, often with an audio/written report afterwards) or in person; format per modality is unconfirmed and must be confirmed by the client.
-- Booking happens on WhatsApp; there is no booking system.
+- Booking happens in Instagram Direct (user decision, replacing WhatsApp): every booking link opens ig.me/m/<handle> and the site copies the pre-written message to the clipboard, since Direct links cannot carry text. There is no booking system.
+- Formats confirmed by the client: online (video call) and in person.
 
 ## Capabilities and Constraints
 
 - Confirmed (public trace): professional name and title; Dragões de Luz; Mesa Quântica (hashtag #mesaquantica); quantum/energy and law-of-attraction framing.
-- Unconfirmed, must stay marked as placeholders: photo, WhatsApp number, city/state, Instagram handle, prices, exact list of modalities, session durations, credentials.
+- Unconfirmed, must stay marked as placeholders: photo, city/state, Instagram handle (placeholder token usuario-da-anelise in every link), prices, exact list of modalities, session durations, credentials.
 - Legal/ethical: complementary therapy. Never promise cure, never "diagnóstico"/"tratamento"/"paciente" (use atendimento, sessão, cliente, harmonização). Must show a disclaimer that it does not replace medical/psychological care (Código Penal arts. 283/284; CDC arts. 36-37; CONAR).
 
 ## Brand Commitments
@@ -46,7 +47,7 @@ Her own public vocabulary (Instagram posts signed "Anelise Werle Camillo Terapeu
 
 ## Product Principles
 
-1. One action: booking by WhatsApp is always one tap away.
+1. One action: booking by Instagram Direct is always one tap away.
 2. Her words, not the category's: Dragões de Luz and Mesa Quântica lead; generic modality menus follow.
 3. Honest about what it is: complementary, no cure claims, disclaimer visible.
 4. Phone first: most visitors come from Instagram on mobile.

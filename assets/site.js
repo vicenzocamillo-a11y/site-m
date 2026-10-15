@@ -341,25 +341,42 @@ if (!calmo) {
   }).observe(cena);
 }
 
-// ---------- Agendar ----------
-// Monta o link do WhatsApp com espaços como %20 (alguns aparelhos mostram "+")
-// e confirma no próprio botão que algo aconteceu.
+// ---------- Agendar pelo Instagram ----------
+// O direct do Instagram não aceita mensagem pronta no link, então o site copia o texto
+// antes de abrir: a pessoa só cola e envia. Um aviso confirma a cópia.
+const aviso = document.querySelector('.aviso-copia');
+let avisoTempo = 0;
+function copiar(texto) {
+  if (!texto || !navigator.clipboard) return;
+  navigator.clipboard.writeText(texto).then(() => {
+    aviso.textContent = 'Mensagem copiada. É só colar no Instagram.';
+    aviso.classList.add('visivel');
+    clearTimeout(avisoTempo);
+    avisoTempo = setTimeout(() => aviso.classList.remove('visivel'), 3200);
+  }, () => {});
+}
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[data-mensagem]');
+  if (link) copiar(link.dataset.mensagem);
+});
+
 const agendar = document.querySelector('.agendar');
 const botaoAgendar = agendar.querySelector('.botao-ouro');
 const rotulo = botaoAgendar.querySelector('span');
 agendar.addEventListener('submit', (e) => {
   e.preventDefault();
-  open(agendar.action + '?text=' + encodeURIComponent(agendar.elements.text.value), '_blank', 'noopener');
+  copiar(agendar.elements.text.value);
+  open(agendar.action, '_blank', 'noopener');
   const original = rotulo.textContent;
   const trocar = (novo) => {
     botaoAgendar.classList.add('trocando');
     setTimeout(() => { rotulo.textContent = novo; botaoAgendar.classList.remove('trocando'); }, 120);
   };
-  trocar('Abrindo o WhatsApp…');
+  trocar('Abrindo o Instagram…');
   setTimeout(() => trocar(original), 2600);
 });
 
-// ---------- Botão flutuante do WhatsApp ----------
+// ---------- Botão flutuante ----------
 // Fica escondido enquanto o botão de agendar da abertura está à vista; depois entra de baixo.
 // Já nasce escondido no HTML: não aparece e some no primeiro quadro.
 const flutuante = document.querySelector('.whats-flutuante');

@@ -758,3 +758,16 @@ section { position: relative; }
   .cena-cartao { width: min(17rem, 100%); }
   .santinho { grid-template-columns: 1fr; }
 }
+
+/* Aviso de mensagem copiada: entra de baixo e sai pelo mesmo caminho */
+.aviso-copia {
+  position: fixed; left: 50%; bottom: calc(5.5rem + env(safe-area-inset-bottom)); z-index: 60;
+  translate: -50% 0; width: max-content; max-width: calc(100vw - 2rem);
+  padding: .7rem 1.1rem; border-radius: 999px;
+  background: var(--esm-950); color: var(--texto); border: 1px solid rgba(214, 178, 94, .45);
+  font-size: .9375rem; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  opacity: 0; transform: translateY(.75rem) scale(.97); pointer-events: none;
+  transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out);
+}
+.aviso-copia.visivel { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .aviso-copia { transform: none; } }

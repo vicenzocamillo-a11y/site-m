@@ -9,7 +9,7 @@ related_targets: []
 
 Scope: the whole one-page site. Visitor mode: Persuade.
 Audience: Brazilian adults, mostly arriving from Instagram on a phone, open to energy work and Dragões de Luz.
-Job / action: book a session — pick an intention/session and open WhatsApp with a pre-filled message.
+Job / action: book a session — pick an intention/session and open Instagram Direct with the message copied to the clipboard.
 Proof on hand: none (no photo, testimonials, prices). Placeholders stay visibly marked; no invented testimonials or credentials.
 Constraints: complementary-therapy disclaimer visible; no cure/diagnosis language; no AI portrait of Anelise.
 Build: comp-led was recorded, but the comp files cannot be copied into this container (network policy), so the build ran code-led with comp 3 (URL in .impeccable/mocks/comps.json, approval delegated by the user) as critique reference.

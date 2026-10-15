@@ -1,6 +1,6 @@
 # Site — Anelise Werle Camillo, Terapeuta Quântica
 
-Site de uma página para agendar atendimentos pelo WhatsApp. HTML, CSS e JS puros, sem build.
+Site de uma página para agendar atendimentos pelo direct do Instagram. HTML, CSS e JS puros, sem build.
 
 O conceito visual é o **Santinho de Luz**: o site é um santinho brasileiro (o cartãozinho devocional de renda de papel) cuja figura é um Dragão de Luz dourado, sobre verde esmeralda e dourado. A abertura fica presa enquanto a pessoa rola: o título se desfaz, o santinho sobe até o centro e vira, mostrando o verso escrito como uma oração. Dá também para arrastar o cartão com o dedo ou virar pelo botão.
 
@@ -21,14 +21,15 @@ Tudo o que aparece no site entre `[[ ]]` numa etiqueta dourada com estrelinha é
 
 | O quê | Onde |
 |---|---|
-| Número do WhatsApp | Troque **todas** as ocorrências de `5500000000000` no `index.html` pelo número com DDI e DDD, só dígitos (ex.: `5519999999999`) |
-| @ do Instagram | Seção Contato (`[[@usuario]]` e o link `https://instagram.com/`) |
+| @ do Instagram | Troque **todas** as ocorrências de `usuario-da-anelise` no `index.html` pelo usuário dela, sem o @ (ex.: `anelisewerle`). Isso liga todos os botões de agendar (direct pelo `ig.me/m/`), o link do perfil e os dados estruturados. Depois troque também o texto `[[@usuario]]` na seção Contato |
 | Foto dela | Seção Sobre, no medalhão oval (`[[foto da Anelise]]`) |
-| Cidade, formato (online, presencial, à distância), duração e valores | Seções Sessões, Sobre, Como funciona e Perguntas |
+| Cidade (atende online e presencial), duração e valores | Seções Sessões, Sobre, Como funciona e Perguntas |
 | Trajetória e formações | Seção Sobre |
 | Dias e horários de atendimento | Seção Contato |
 
-Antes de publicar, procure por `[[` e por `5500000000000` no `index.html`: nenhum deve sobrar.
+Antes de divulgar, procure por `[[` e por `usuario-da-anelise` no `index.html`: nenhum deve sobrar.
+
+Como o direct do Instagram não aceita mensagem pronta no link, o site copia a mensagem de agendamento ao tocar no botão e avisa a pessoa para colar.
 
 ## Imagens
 
@@ -59,7 +60,7 @@ Qualquer hospedagem de site estático serve:
 
 - `index.html` — todo o conteúdo
 - `assets/site.css` — visual (cores esmeralda e dourado e fontes no topo, em `:root`)
-- `assets/site.js` — menu do celular, cena da abertura, arrastar e virar o santinho com mola, botão flutuante do WhatsApp
+- `assets/site.js` — menu do celular, cena da abertura, arrastar e virar o santinho com mola, agendar pelo Instagram (copia a mensagem e abre o direct), botão flutuante
 - `assets/renda.svg` — a borda de renda de papel dos cartões
 - `assets/fonts/` — Bodoni Moda (licença SIL OFL, `OFL-bodoni-moda.txt`); o texto corrido usa a fonte do sistema (SF Pro no iPhone e no Mac)
 - `PESQUISA.md` — o que a pesquisa encontrou sobre a Anelise e as fontes
